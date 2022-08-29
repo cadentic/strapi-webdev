@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Script from 'next/script'
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import theme from '../src/theme';
@@ -10,12 +11,13 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     {/* -- Google Tag Manager -- */}
-                    <script>(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WT7BQQ2');</script>
-                    /* -- End Google Tag Manager -- */
+                    {/*   <Script id="google-tag-manager" strategy="afterInteractive" dangerouslySetInnerHTML={{
+                        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WT7BQQ2');`}}></Script>
+                     -- End Google Tag Manager -- */}
                     {/* PWA primary color */}
                     <meta name="theme-color"
                         content={theme.palette.primary.main} />
@@ -31,9 +33,11 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 </Head>
                 <body>
                     {/* -- Google Tag Manager (noscript) -- */}
-                    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT7BQQ2"
-                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-                    {/*  End Google Tag Manager (noscript) -- */}
+                    {/*  <noscript dangerouslySetInnerHTML={{
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT7BQQ2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript>
+                    <Main />
+                      End Google Tag Manager (noscript) -- */}
                     <Main />
                     <NextScript />
                 </body>
