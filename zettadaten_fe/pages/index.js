@@ -126,7 +126,7 @@ const Home = ({ Pages, error }) => {
 
       <Stack
         direction="row"
-        justifyContent="flex-start"
+        justifyContent="flex-left"
         alignItems="flex-start"
         padding="10px"
         spacing={3}
@@ -155,9 +155,9 @@ const Home = ({ Pages, error }) => {
                 alt="Paella dish"
               />
               <CardContent>
-                
-            <Typography variant="body2" color="text.secondary">
-                {Pages.attributes.Description}</Typography>
+
+                <Typography variant="body1" color="text.secondary">
+                  {Pages.attributes.Description}</Typography>
               </CardContent>
               <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
@@ -176,11 +176,11 @@ const Home = ({ Pages, error }) => {
                 </ExpandMore>
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
-              
-            <Typography paragraph padding="10px">
+
+                <Typography paragraph padding="10px">
 
                   {Pages.attributes.Content}</Typography>
-                </Collapse>
+              </Collapse>
             </Card>
           </div>
 
@@ -191,7 +191,7 @@ const Home = ({ Pages, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    
+
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
     return { Pages };
