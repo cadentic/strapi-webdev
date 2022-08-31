@@ -16,6 +16,7 @@
     "@mui/material": "^5.10.2",
     "@styled-icons/material": "^10.34.0",
     "axios": "^0.27.2",
+    "material-ui-popup-state": "^4.0.2",
     "next": "12.2.5",
     "next-transpile-modules": "^9.0.0",
     "nextjs-components": "^0.9.0",

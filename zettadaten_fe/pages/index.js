@@ -21,6 +21,7 @@ import { styled } from '@mui/material/styles';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 import { Container } from "@mui/material";
 import { useState, useEffect } from "react";
 
@@ -123,7 +124,13 @@ const Home = ({ Pages, error }) => {
 
       </main>
 
-      <div classname={style.card} >
+      <Stack
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        padding="10px"
+        spacing={3}
+      >
         {Pages.data.map(Pages => (
           <div classname={style.main}>
             <Card sx={{ maxWidth: 345 }}>
@@ -170,14 +177,14 @@ const Home = ({ Pages, error }) => {
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
               
-            <Typography paragraph>
+            <Typography paragraph padding="10px">
 
                   {Pages.attributes.Content}</Typography>
                 </Collapse>
             </Card>
           </div>
 
-        ))} </div>
+        ))} </Stack>
     </div>
   );
 };
