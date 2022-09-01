@@ -20,8 +20,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
+import Rating from '@mui/material/Rating';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 import { Container } from "@mui/material";
 import { useState, useEffect } from "react";
 
@@ -106,38 +109,16 @@ const Home = ({ Pages, error }) => {
   }
   return (
     <div className={style.main}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={style.main}>
-        <h1 className={style.title}>
-          Welcome to <a href="https://nextjs.org">
-            Next.js!</a> integrated with{" "}
-          <a href="https://mui.com/">Material-UI!</a>
-        </h1>
-        <p className={style.description}>
-          Get started by editing{" "}
-          <code className={style.code}>
-            pages/index.js</code>
-        </p>
 
-      </main>
 
-      <Stack
-        direction="row"
-        justifyContent="flex-left"
-        alignItems="flex-start"
-        padding="10px"
-        spacing={3}
-      >
+      <Toolbar>
         {Pages.data.map(Pages => (
-          <div classname={style.main}>
-            <Card sx={{ maxWidth: 345 }}>
+          //<div classname={style.main}>
+          <Card sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch' }} elevation={4} position="relative">
               <CardHeader
                 avatar={
-                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    R
+                  <Avatar sx={{ bgcolor: red[200], spacing: "5px" , margin:"2px" }} aria-label="Technocrat">
+                    TC
                   </Avatar>
                 }
                 action={
@@ -150,18 +131,19 @@ const Home = ({ Pages, error }) => {
               />
               <CardMedia
                 component="img"
-                height="194"
-                image={Pages.attributes.Images}
+                height="200"
+                image="{Pages.attributes.Images}"
                 alt="Paella dish"
               />
               <CardContent>
 
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body2" color="text.secondary">
                   {Pages.attributes.Description}</Typography>
               </CardContent>
-              <CardActions disableSpacing>
+              <CardActions enableSpacing>
                 <IconButton aria-label="add to favorites">
                   <FavoriteIcon />
+                  <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                 </IconButton>
                 <IconButton aria-label="share">
                   <ShareIcon />
@@ -179,12 +161,12 @@ const Home = ({ Pages, error }) => {
 
                 <Typography paragraph padding="10px">
 
-                  {Pages.attributes.Content}</Typography>
+                  <Box sx={{ my: 8 , spacing: 10, margin:2 }}>  {Pages.attributes.Content} </Box></Typography>
               </Collapse>
             </Card>
-          </div>
+    //      </div>
 
-        ))} </Stack>
+        ))} </Toolbar>
     </div>
   );
 };
