@@ -8,6 +8,7 @@ import { CacheProvider } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { StyledEngineProvider } from '@mui/material/styles';
+import Navigations from '../components/Navigation';
 //import CssBaseline from '@mui/material/CssBaseline';
 // import Testimonial from '../components/Testimonial';
 
@@ -45,7 +46,7 @@ export default function MyApp(props) {
         })(window,document,'script','dataLayer','GTM-WT7BQQ2');
       `}
       </Script> */}
-         
+      <Navigations />   
         <Component {...pageProps} />
       </ThemeProvider>
         </CacheProvider>

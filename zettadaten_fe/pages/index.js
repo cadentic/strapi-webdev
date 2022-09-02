@@ -126,7 +126,7 @@ const Home = ({ Pages, error }) => {
         `}>
              <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: red[200], spacing: "5px", margin: "2px" }} aria-label="Technocrat">
+                <Avatar sx={{ bgcolor: red[200], spacing: "5px", margin: "2px", hover: "outline - 2" }} aria-label="Technocrat">
                   TC
                 </Avatar>
               }
