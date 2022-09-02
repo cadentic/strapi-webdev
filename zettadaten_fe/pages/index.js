@@ -25,8 +25,9 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
-import { Container } from "@mui/material";
+import { css } from '@emotion/react';
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 
 //import { style } from "@mui/system";
 
@@ -97,6 +98,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 const Home = ({ Pages, error }) => {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -105,7 +107,7 @@ const Home = ({ Pages, error }) => {
   };
 
   if (error) {
-    return <div classname={style.Container} >An error occured: {error.message}</div>;
+    return <div className={style.Container} >An error occured: {error.message}</div>;
   }
   return (
     <div className={style.main}>
@@ -114,30 +116,35 @@ const Home = ({ Pages, error }) => {
       <Toolbar>
         {Pages.data.map(Pages => (
           //<div classname={style.main}>
-          <Card sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch' }} elevation={4} position="relative">
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: red[200], spacing: "5px" , margin:"2px" }} aria-label="Technocrat">
-                    TC
-                  </Avatar>
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                  </IconButton>
-                }
-                title={Pages.attributes.Title}
-                subheader="September 14, 2016"
+          <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300" }} elevation={4} position="relative"
+            css={css`
+          color: #20b2aa;
+
+          :hover {
+            color: #2e8b57;
+          }
+        `}>
+             <CardHeader
+              avatar={
+                <Avatar sx={{ bgcolor: red[200], spacing: "5px", margin: "2px" }} aria-label="Technocrat">
+                  TC
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title={Pages.attributes.Title}
+              subheader={Pages.attributes.createdAt }
               />
-              <CardMedia
-                component="img"
-                height="200"
-                image="{Pages.attributes.Images}"
-                alt="Paella dish"
-              />
+              <CardMedia  component="img" height="200" image="/favicon.ico" alt="Paella dish" />
+            {/* 
+           <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
+            */}
               <CardContent>
 
-                <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
                   {Pages.attributes.Description}</Typography>
               </CardContent>
               <CardActions enableSpacing>
@@ -161,10 +168,13 @@ const Home = ({ Pages, error }) => {
 
                 <Typography paragraph padding="10px">
 
-                  <Box sx={{ my: 8 , spacing: 10, margin:2 }}>  {Pages.attributes.Content} </Box></Typography>
-              </Collapse>
+                <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
+            
+            </Collapse>
+            
             </Card>
     //      </div>
+          
 
         ))} </Toolbar>
     </div>

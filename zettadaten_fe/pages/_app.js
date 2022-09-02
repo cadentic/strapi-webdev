@@ -7,6 +7,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
+import { StyledEngineProvider } from '@mui/material/styles';
+//import CssBaseline from '@mui/material/CssBaseline';
+// import Testimonial from '../components/Testimonial';
 
 // Client-side cache shared for the whole session
 // of the user in the browser.
@@ -19,6 +22,7 @@ export default function MyApp(props) {
 
   return (
     <>
+      <StyledEngineProvider injectFirst>
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport"
@@ -41,9 +45,11 @@ export default function MyApp(props) {
         })(window,document,'script','dataLayer','GTM-WT7BQQ2');
       `}
       </Script> */}
+         
         <Component {...pageProps} />
       </ThemeProvider>
-    </CacheProvider>
+        </CacheProvider>
+      </StyledEngineProvider>
 </>  );
 }
 
