@@ -26,6 +26,8 @@ import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import { css } from '@emotion/react';
+import Navigations from '../components/Navigation.js';
+import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 
@@ -111,11 +113,13 @@ const Home = ({ Pages, error }) => {
   }
   return (
     <div className={style.main}>
-
-
+      
+      <Navigations />
+      
       <Toolbar>
         {Pages.data.map(Pages => (
-          //<div classname={style.main}>
+          //<div classname={style.main}> 
+          
           <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300" }} elevation={4} position="relative"
             css={css`
           color: #20b2aa;
@@ -123,7 +127,7 @@ const Home = ({ Pages, error }) => {
           :hover {
             color: #2e8b57;
           }
-        `}>
+        `}> 
              <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[200], spacing: "5px", margin: "2px", hover: "outline - 2" }} aria-label="Technocrat">
@@ -138,7 +142,7 @@ const Home = ({ Pages, error }) => {
               title={Pages.attributes.Title}
               subheader={Pages.attributes.createdAt }
               />
-              <CardMedia  component="img" height="200" image="/favicon.ico" alt="Paella dish" />
+            <CardMedia component="img" height="200" image="/favicon.ico" alt="Paella dish" />
             {/* 
            <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
             */}
@@ -171,12 +175,13 @@ const Home = ({ Pages, error }) => {
                 <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
             
             </Collapse>
-            
+  
             </Card>
     //      </div>
-          
+         
 
         ))} </Toolbar>
+      <CopyerightZettadaten />
     </div>
   );
 };

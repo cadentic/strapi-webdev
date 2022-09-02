@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <Html lang="en" class="overflow-y-scroll">
+            <Html lang="en" className="overflow-y-scroll">
                 <Head>
                     {/* -- Google Tag Manager -- */}
                     {/*   <Script id="google-tag-manager" strategy="afterInteractive" dangerouslySetInnerHTML={{
@@ -58,7 +58,7 @@ export default class MyDocument extends Document {
                     {/* Inject MUI styles first to match with the prepend: true configuration. */}
                     {this.props.emotionStyleTags}
                 </Head>
-                <body class="scrollbar-w-1 scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+                <body className="scrollbar-w-1 scrollbar-thumb-gray-400 scrollbar-track-gray-200">
                     {/* -- Google Tag Manager (noscript) -- */}
                     {/*  <noscript dangerouslySetInnerHTML={{
                         __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT7BQQ2"

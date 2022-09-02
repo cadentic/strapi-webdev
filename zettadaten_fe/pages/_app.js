@@ -9,6 +9,7 @@ import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Navigations from '../components/Navigation';
+import CopyerightZettadaten from '../components/CopyerightZettadaten';
 //import CssBaseline from '@mui/material/CssBaseline';
 // import Testimonial from '../components/Testimonial';
 
@@ -46,7 +47,8 @@ export default function MyApp(props) {
         })(window,document,'script','dataLayer','GTM-WT7BQQ2');
       `}
       </Script> */}
-      <Navigations />   
+            <Navigations />  
+            <CopyerightZettadaten />      
         <Component {...pageProps} />
       </ThemeProvider>
         </CacheProvider>
@@ -59,3 +61,4 @@ MyApp.propTypes = {
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };
+
