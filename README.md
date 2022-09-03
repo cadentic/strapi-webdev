@@ -21,6 +21,6 @@ we used it as an data delivery purposes.
 
 <a href="https://github.com/cadentic"><img alt="Git Stats" src="https://github-readme-stats.vercel.app/api?username=cadentic&show_icons=true" align="right" height="150" /></a>
 
-I am an Oracle DBA & Oracle E-Business Suit DBA, working heavily with the TALL stack. I work for [CADENTIC®](https://cadentic.net) as Founder and Delf-employed, doing  an innovative prototype for quantum database!
+I am an Oracle DBA & Oracle E-Business Suit DBA, worked heavily with the TALL stuff. I work for [CADENTIC®](https://cadentic.net) as Founder and Delf-employed, doing  an innovative prototype for quantum database!
 
 ### 📦 I'm currently working on..... 
