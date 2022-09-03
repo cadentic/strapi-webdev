@@ -30,6 +30,7 @@ import Navigations from '../components/Navigation.js';
 import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
+import HeroSection from "../components/HeroSection";
 
 //import { style } from "@mui/system";
 
@@ -115,6 +116,7 @@ const Home = ({ Pages, error }) => {
     <div className={style.main}>
       
       <Navigations />
+      <HeroSection />
       
       <Toolbar>
         {Pages.data.map(Pages => (
