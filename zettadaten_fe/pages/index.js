@@ -181,7 +181,8 @@ const Home = ({ Pages, error }) => {
          
 
         ))} </Toolbar>
-    //  <CopyerightZettadaten />
+      
+      <CopyerightZettadaten />
     </div>
   );
 };

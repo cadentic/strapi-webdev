@@ -47,8 +47,8 @@ export default function MyApp(props) {
         })(window,document,'script','dataLayer','GTM-WT7BQQ2');
       `}
       </Script> */}
-            <Navigations />  
-            <CopyerightZettadaten />      
+           
+           
         <Component {...pageProps} />
       </ThemeProvider>
         </CacheProvider>
