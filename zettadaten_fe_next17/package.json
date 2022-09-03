@@ -1,0 +1,41 @@
+{
+  "name": "zettadaten_fe_next17",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 4845",
+    "build": "next build",
+    "start": "next start -p 4895",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "axios": "latest",
+    "next": "12.2.5",
+    "postcss": "latest",
+    "prop-types": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "^2.1.3",
+    "tailwindcss": "latest",
+    "web-vitals": "latest"
+  },
+  "devDependencies": {
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5"
+  }
+}
