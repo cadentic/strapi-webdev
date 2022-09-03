@@ -31,7 +31,7 @@ import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import HeroSection from "../components/HeroSection";
-import someheader from "../src/someheader";
+
 //import { style } from "@mui/system";
 
 //function notificationsLabel(count) {
@@ -113,8 +113,8 @@ const Home = ({ Pages, error }) => {
     return <div className={style.Container} >An error occured: {error.message}</div>;
   }
   return (
-    <div>
-      <someheader />
+    <div className={style.main}>
+      
       <Navigations />
       <HeroSection />
       
