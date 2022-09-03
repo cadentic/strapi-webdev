@@ -18,30 +18,20 @@
     "@react-stately/overlays": "^3.4.1",
     "@styled-icons/material": "^10.34.0",
     "axios": "^0.27.2",
-    "embla-carousel-react": "^7.0.1",
-    "flowbite": "^1.5.3",
-    "flowbite-react": "^0.1.10",
     "material-ui-popup-state": "^4.0.2",
     "next": "^12.2.5",
     "next-transpile-modules": "^9.0.0",
     "nextjs-components": "^0.9.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.8.0",
-    "reach": "^1.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-material-ui-carousel": "^3.4.2",
-    "react-popper": "^2.3.0",
     "react-scroll": "^1.8.7",
-    "react-slick": "^0.29.0",
-    "styled-components": "^5.3.5",
-    "vanilla-lazyload": "^17.8.3"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "eslint-config-next": "12.2.5"
   }
 }
