@@ -146,12 +146,6 @@ const Navigations = () => {
             <MuiLink color="inherit" href="/">
               <HomeIcon /> Home 
             </MuiLink>{' '}
-            <MuiLink color="inherit"  href="/">
-              Contact us
-            </MuiLink>{' '}
-            <MuiLink color="inherit" href="/">
-              About us
-            </MuiLink>{' '}
 
           </Typography>
         </Toolbar>
