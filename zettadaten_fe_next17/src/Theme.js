@@ -29,12 +29,14 @@ const theme = createTheme({
             contrastText: '#212121',
         },
         secondary: {
-            main: '#607D8B', // omitting light and dark will calculate from main
+            main: '#3e2723', // omitting light and dark will calculate from main
             contrastText: '#757575',
+            accent: '#3e2723',
         },
         grey: {
             '500': '#bcbcbc',
             '700': '#79797a',
+            '900': '#3A3236',
         },
         info: {
             main: '#1bb2f1',
@@ -50,7 +52,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Roboto',
+        fontFamily: 'Sans-serif',
     },
 });
 

@@ -1,6 +1,5 @@
-import React from 'react';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 //import Grid from '@mui/material/Grid'; // Grid version 1
 import Grid from '@mui/material/Unstable_Grid2'; 
@@ -8,45 +7,42 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 //import Image from '@mui/material/Image';
-import { Container, Toolbar } from '@mui/material';
+import { Container, Toolbar, Typography, CssBaseline } from '@mui/material';
+import MuiLink from '@mui/material/Link';
+//import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { AppBar } from '@mui/material';
+import { grey, brown } from '@mui/material/colors';
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will defau
 
 const Navigations = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
-
-  const open = Boolean(anchorEl);
-
+  //const brown = brown[900];
   return (
-    <div>
-             <AppBar
-        color={isCustomColor || isCustomHeight ? "red[300]" : example}
-        className={`${isCustomColor && classes.customColor} ${
-          isCustomHeight && classes.customHeight
-        }`}
-      >
-        <Toolbar>
-          
-          </Toolbar>
+    <React.Fragment>
+      <CssBaseline />
+      
+      <AppBar position="sticky" bgcolor="brown[A900]" sx={{ top: 'auto', bottom: 2 }}>
+              <Toolbar>
+          <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
+            <MuiLink color="inherit" href="/">
+              Home
+            </MuiLink>{' '}
+            <MuiLink color="inherit"  href="/">
+              Contact us
+            </MuiLink>{' '}
+            <MuiLink color="inherit" href="/">
+              About us
+            </MuiLink>{' '}
 
+          </Typography>
+        </Toolbar>
       </AppBar>
-</div>
-  )
+        <Container>
+
+        </Container>
+        
+    </React.Fragment>
+  );
 }
 
 export default Navigations
