@@ -156,7 +156,7 @@ const Navigations = () => {
     <React.Fragment>
       <CssBaseline />
 
-      <AppBar position="sticky" bgcolor='palette.secondery.accent' sx={{ top: 'auto', bottom: 2 }}>
+      <AppBar position="sticky" bgcolor='palette.secondery.accent' sx={{ top: 'auto', bottom: 2 , px: 'auto' }}>
         <Toolbar>
           <Image src="/favicon.ico" alt="lol" width="160" height="16" />
           <IconButton

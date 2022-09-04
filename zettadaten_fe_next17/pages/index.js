@@ -113,7 +113,7 @@ const Home = ({ Pages, error }) => {
     return <div className={style.Container} >An error occured: {error.message}</div>;
   }
   return (
-    <div className={style.main}>
+    <div>
       
       <Navigations />
       <HeroSection />
