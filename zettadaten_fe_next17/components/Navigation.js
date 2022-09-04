@@ -2,16 +2,17 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 //import Grid from '@mui/material/Grid'; // Grid version 1
-import Grid from '@mui/material/Unstable_Grid2'; 
+import Grid from '@mui/material/Unstable_Grid2';
 import { styled, alpha } from '@mui/material/styles';
 //import Image from '@mui/material/Image';
-import { Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar } from '@mui/material';
+import { ClickAwayListener, Grow, Button, MenuList ,ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar ,Popper } from '@mui/material';
 import MuiLink from '@mui/material/Link';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import  HomeIcon from '@mui/icons-material/Home'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
@@ -19,13 +20,40 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { grey, brown } from '@mui/material/colors';
-import  Image  from 'next/image';
+import Image from 'next/image';
 
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will defau
+// Note that you normally won't need to set the window ref as useScrollTrigger
+// will defau
+const options = ['View Accounts', 'Contact Sales', 'Logedin users']
 
 const Navigations = () => {
   //const brown = brown[900];
+
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleClick = () => {
+    console.info(`You clicked ${options[selectedIndex]}`);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setOpen(false);
+  };
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -127,10 +155,10 @@ const Navigations = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      
-      <AppBar position="sticky" bgcolor='theme.palette.secondery.accent' sx={{ top: 'auto', bottom: 2 }}>
+
+      <AppBar position="sticky" bgcolor='palette.secondery.accent' sx={{ top: 'auto', bottom: 2 }}>
         <Toolbar>
-          <Image src="/favicon.ico" alt="lol" width="160" height="16"/>
+          <Image src="/favicon.ico" alt="lol" width="160" height="16" />
           <IconButton
             size="large"
             edge="start"
@@ -144,16 +172,68 @@ const Navigations = () => {
 
           <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
-              <HomeIcon /> Home 
+              <HomeIcon /> Home
             </MuiLink>{' '}
-
+          
           </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+            <Button onClick={handleClick}>{options[selectedIndex]}</Button>
+            <Button
+              size="small"
+              aria-controls={open ? 'split-button-menu' : undefined}
+              aria-expanded={open ? 'true' : undefined}
+              aria-label="select merge strategy"
+              aria-haspopup="menu"
+              onClick={handleToggle}
+            >
+              <ArrowDropDownIcon />
+            </Button>
+          </ButtonGroup>
+          <Popper
+            sx={{
+              zIndex: 1,
+            }}
+            open={open}
+            anchorEl={anchorRef.current}
+            role={undefined}
+            transition
+            disablePortal
+          >
+            {({ TransitionProps, placement }) => (
+              <Grow
+                {...TransitionProps}
+                style={{
+                  transformOrigin:
+                    placement === 'bottom' ? 'center top' : 'center bottom',
+                }}
+              >
+                <Paper>
+                  <ClickAwayListener onClickAway={handleClose}>
+                    <MenuList id="split-button-menu" autoFocusItem>
+                      {options.map((option, index) => (
+                        <MenuItem
+                          key={option}
+                          disabled={index === 2}
+                          selected={index === selectedIndex}
+                          onClick={(event) => handleMenuItemClick(event, index)}
+                        >
+                          {option}
+                        </MenuItem>
+                      ))}
+                    </MenuList>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+            )}
+            </Popper>
+            
+            </Box>
         </Toolbar>
       </AppBar>
-        <Container>
 
-        </Container>
-        
+
     </React.Fragment>
   );
 }
