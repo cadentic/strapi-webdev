@@ -8,8 +8,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 //import Image from '@mui/material/Image';
-import { Container } from '@mui/material';
-
+import { Container, Toolbar } from '@mui/material';
+import { AppBar } from '@mui/material';
 
 const Navigations = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -34,12 +34,18 @@ const Navigations = () => {
 
   return (
     <div>
-      <Grid container spacing={3}>
-        <Grid item xs={8}>
-          <Item><Container maxWidth="sm" className=""> </Container>
-        </Item> </Grid>
-        </Grid>
-    </div>
+             <AppBar
+        color={isCustomColor || isCustomHeight ? "red[300]" : example}
+        className={`${isCustomColor && classes.customColor} ${
+          isCustomHeight && classes.customHeight
+        }`}
+      >
+        <Toolbar>
+          
+          </Toolbar>
+
+      </AppBar>
+</div>
   )
 }
 

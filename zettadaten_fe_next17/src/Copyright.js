@@ -7,7 +7,10 @@ export default function Copyright() {
         <Typography variant="body2" color="text.secondary" align="center">
             {'Copyright © '}
             <MuiLink color="inherit" href="https://ndedges.com/">
-                Your Website
+                CADENTIC®
+            </MuiLink>{' '}
+            <MuiLink color="inherit" href="https://zettadaten.com/">
+                CADENTIC ZETTADATEN™
             </MuiLink>{' '}
             {new Date().getFullYear()}.
         </Typography>
