@@ -11,6 +11,7 @@ import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import  HomeIcon from '@mui/icons-material/Home'
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
@@ -127,7 +128,7 @@ const Navigations = () => {
     <React.Fragment>
       <CssBaseline />
       
-      <AppBar position="sticky" bgcolor="secondery.accent" sx={{ top: 'auto', bottom: 2 }}>
+      <AppBar position="sticky" bgcolor='theme.palette.secondery.accent' sx={{ top: 'auto', bottom: 2 }}>
         <Toolbar>
           <Image src="/favicon.ico" alt="lol" width="160" height="16"/>
           <IconButton
@@ -143,7 +144,7 @@ const Navigations = () => {
 
           <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
-              Home
+              <HomeIcon /> Home 
             </MuiLink>{' '}
             <MuiLink color="inherit"  href="/">
               Contact us
