@@ -116,6 +116,7 @@ const Home = ({ Pages, error }) => {
     <div>
       
       <Navigations />
+      <div className={style.main}>
       <HeroSection />
       
       <Toolbar>
@@ -183,7 +184,7 @@ const Home = ({ Pages, error }) => {
          
 
         ))} </Toolbar>
-      
+      </div>
       <CopyerightZettadaten />
     </div>
   );
