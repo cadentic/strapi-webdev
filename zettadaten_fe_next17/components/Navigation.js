@@ -21,11 +21,20 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import * as Colors from '@mui/material/colors';
 import Image from 'next/image';
-
+import ViewCompactRoundedIcon from '@mui/icons-material/ViewCompactRounded';
 
 // Note that you normally won't need to set the window ref as useScrollTrigger
 // will defau
 const options = ['View Accounts', 'Contact Sales', 'Logedin users']
+
+const ConditionalWrapper = ({ children, condition }) => {
+  return condition ? (
+    <div>{children}</div>
+  ) : (
+    children
+  )
+}
+
 
 const Navigations = () => {
   //const brown = brown[900];
@@ -167,7 +176,7 @@ const Navigations = () => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <ViewCompactRoundedIcon />
           </IconButton>
 
 
