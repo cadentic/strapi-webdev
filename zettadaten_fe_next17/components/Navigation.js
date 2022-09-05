@@ -158,7 +158,7 @@ const Navigations = () => {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle sx={{color: '#F1EFED'}} />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -170,7 +170,7 @@ const Navigations = () => {
     <React.Fragment>
       <CssBaseline />
 
-      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#000000'}}>
+      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#faf8f7'}}>
         <Toolbar>
           <Image src="/favicon.ico" alt="lol" width="160" height="16" />
           <IconButton
@@ -180,17 +180,17 @@ const Navigations = () => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <ViewCompactRoundedIcon />
+            <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
           </IconButton>
 
 
           <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
-              <HomeIcon /> Home
+              <HomeIcon sx={{ color: '#faf8f7' }} /> Home
             </MuiLink>{' '}
           
           </Typography>
-          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ flexGrow: 1  }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
             <Button onClick={handleClick}>{options[selectedIndex]}</Button>
@@ -202,7 +202,7 @@ const Navigations = () => {
               aria-haspopup="menu"
               onClick={handleToggle}
             >
-              <ArrowDropDownIcon />
+                <ArrowDropDownIcon sx={{ color: '#faf8f7' }} />
             </Button>
           </ButtonGroup>
           <Popper
@@ -225,7 +225,7 @@ const Navigations = () => {
               >
                 <Paper>
                   <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList id="split-button-menu" autoFocusItem>
+                    <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
                       {options.map((option, index) => (
                         <MenuItem
                           key={option}

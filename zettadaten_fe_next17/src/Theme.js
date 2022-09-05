@@ -19,8 +19,8 @@ const theme = createTheme({
 const theme = createTheme({
     palette: {
         common: {
-            black: '#19192B',
-            white: '#ffffff',
+            black: '#3a3236',
+            white: '#faf8f7',
         },
         primary: {
             light: '#B3E5FC',
@@ -48,7 +48,7 @@ const theme = createTheme({
             main: '#832838',
         },
         background: {
-            default: '#fff',
+            default: '#faf8f7',
         },
     },
     typography: {
