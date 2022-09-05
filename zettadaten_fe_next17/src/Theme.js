@@ -24,7 +24,7 @@ const theme = createTheme({
         },
         primary: {
             light: '#B3E5FC',
-            main: '#03A9F4',
+            main:     '#3A3236', // '#03A9F4',
             dark: '#0288D1',
             contrastText: '#212121',
         },
@@ -58,4 +58,4 @@ const theme = createTheme({
 
 //export default theme;
 
-export default theme;
+export default createTheme(theme);

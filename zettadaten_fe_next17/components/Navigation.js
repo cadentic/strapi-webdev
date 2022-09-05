@@ -19,8 +19,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { grey, brown } from '@mui/material/colors';
+import * as Colors from '@mui/material/colors';
 import Image from 'next/image';
+
 
 // Note that you normally won't need to set the window ref as useScrollTrigger
 // will defau
@@ -156,7 +157,7 @@ const Navigations = () => {
     <React.Fragment>
       <CssBaseline />
 
-      <AppBar position="sticky" bgcolor='palette.secondery.accent' sx={{ top: 'auto', bottom: 2 , px: 'auto' }}>
+      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto' }}>
         <Toolbar>
           <Image src="/favicon.ico" alt="lol" width="160" height="16" />
           <IconButton
