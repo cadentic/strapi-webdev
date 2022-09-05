@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Grid from '@mui/material/Unstable_Grid2';
 import { styled, alpha } from '@mui/material/styles';
 //import Image from '@mui/material/Image';
-import { ClickAwayListener, Grow, Button, MenuList ,ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar ,Popper } from '@mui/material';
+import { ClickAwayListener, Grow, Button, MenuList, ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar, Popper } from '@mui/material';
 import MuiLink from '@mui/material/Link';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -23,8 +23,12 @@ import * as Colors from '@mui/material/colors';
 import Image from 'next/image';
 import ViewCompactRoundedIcon from '@mui/icons-material/ViewCompactRounded';
 
+
 // Note that you normally won't need to set the window ref as useScrollTrigger
 // will defau
+
+
+
 const options = ['View Accounts', 'Contact Sales', 'Logedin users']
 
 const ConditionalWrapper = ({ children, condition }) => {
@@ -44,7 +48,7 @@ const Navigations = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    console.info(`You clicked ${ options[selectedIndex]}`);
   };
 
   const handleMenuItemClick = (event, index) => {
@@ -166,7 +170,7 @@ const Navigations = () => {
     <React.Fragment>
       <CssBaseline />
 
-      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto' }}>
+      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#000000'}}>
         <Toolbar>
           <Image src="/favicon.ico" alt="lol" width="160" height="16" />
           <IconButton
