@@ -184,30 +184,31 @@ const Navigations = () => {
           </IconButton>
 
 
-          <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
+          {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
               <HomeIcon sx={{ color: '#faf8f7' }} /> Home
-            </MuiLink>{' '}
-          
-          </Typography>
-          <Box sx={{ flexGrow: 1  }} />
+            </MuiLink>{' '} 
+ 
+          </Typography>  */}
+
+          <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-            <Button onClick={handleClick}>{options[selectedIndex]}</Button>
+            <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
+              <Button onClick={handleClick} sx={{ color: '#faf8f7' , border: 2 }}>{options[selectedIndex]}</Button>
             <Button
               size="small"
               aria-controls={open ? 'split-button-menu' : undefined}
               aria-expanded={open ? 'true' : undefined}
               aria-label="select merge strategy"
               aria-haspopup="menu"
-              onClick={handleToggle}
+              onClick={handleToggle} 
             >
                 <ArrowDropDownIcon sx={{ color: '#faf8f7' }} />
             </Button>
           </ButtonGroup>
           <Popper
             sx={{
-              zIndex: 1,
+                zIndex: 1, width: '20%'
             }}
             open={open}
             anchorEl={anchorRef.current}
@@ -217,12 +218,12 @@ const Navigations = () => {
           >
             {({ TransitionProps, placement }) => (
               <Grow
-                {...TransitionProps}
-                style={{
-                  transformOrigin:
-                    placement === 'bottom' ? 'center top' : 'center bottom',
-                }}
-              >
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin:
+                      placement === 'bottom' ? 'center top' : 'center bottom',
+                  }}
+                   >
                 <Paper>
                   <ClickAwayListener onClickAway={handleClose}>
                     <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>

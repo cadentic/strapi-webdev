@@ -31,6 +31,8 @@ import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import HeroSection from "../components/HeroSection";
+import TabbedSection from "../components/TabbedSection";
+import DropDownPaperSection from "../components/DropDownPaperSection";
 
 //import { style } from "@mui/system";
 
@@ -116,9 +118,10 @@ const Home = ({ Pages, error }) => {
     <div>
       
       <Navigations />
+     {/*  <TabbedSection /> */}
       <div className={style.main}>
       <HeroSection />
-      
+       < DropDownPaperSection />
       <Toolbar>
         {Pages.data.map(Pages => (
           //<div classname={style.main}> 
