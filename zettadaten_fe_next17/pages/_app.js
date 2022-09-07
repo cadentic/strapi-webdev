@@ -73,6 +73,8 @@ import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/Theme';
+
+
 //import { wrapper, store } from "../store/store";
 //import { Provider } from "react-redux";
 
@@ -83,6 +85,9 @@ import createEmotionCache from '../src/createEmotionCache';
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
+
+
+
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (

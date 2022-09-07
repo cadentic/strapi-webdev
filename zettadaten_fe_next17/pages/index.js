@@ -34,6 +34,7 @@ import HeroSection from "../components/HeroSection";
 import TabbedSection from "../components/TabbedSection";
 import DropDownPaperSection from "../components/DropDownPaperSection";
 import Testimonial from "../components/Testimonial";
+import Link from "next/link";
 
 //import { style } from "@mui/system";
 
@@ -107,7 +108,7 @@ const Home = ({ Pages, error }) => {
       <div className={style.main}>
       <HeroSection />
        < DropDownPaperSection />
-       {/* <Testimonial data={{Pages,error}} /> */}
+        <Testimonial Pages={Pages} error={error} /> 
       </div>
       <CopyerightZettadaten />
     </div>
