@@ -33,6 +33,7 @@ import Image from 'next/image';
 import HeroSection from "../components/HeroSection";
 import TabbedSection from "../components/TabbedSection";
 import DropDownPaperSection from "../components/DropDownPaperSection";
+import Testimonial from "../components/Testimonial";
 
 //import { style } from "@mui/system";
 
@@ -92,28 +93,12 @@ export async function getServerSideProps() {
 }
 */
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
 
 const Home = ({ Pages, error }) => {
-  const [expanded, setExpanded] = React.useState(false);
+// }
+ // const [Pages, setPages] = useState()
+  // setPages(await res.json())
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  if (error) {
-    return <div className={style.Container} >An error occured: {error.message}</div>;
-  }
   return (
     <div>
       
@@ -122,87 +107,30 @@ const Home = ({ Pages, error }) => {
       <div className={style.main}>
       <HeroSection />
        < DropDownPaperSection />
-      <Toolbar>
-        {Pages.data.map(Pages => (
-          //<div classname={style.main}> 
-          
-          <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300" }} elevation={4} position="relative"
-            css={css`
-          color: #20b2aa;
-
-          :hover {
-            color: #2e8b57;
-          }
-        `}> 
-             <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[200], spacing: "5px", margin: "2px", hover: "outline - 2" }} aria-label="Technocrat">
-                  TC
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title={Pages.attributes.Title}
-              subheader={Pages.attributes.createdAt }
-              />
-            <CardMedia component="img" height="200" image="/favicon.ico" alt="Paella dish" />
-            {/* 
-           <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
-            */}
-              <CardContent>
-
-              <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
-                  {Pages.attributes.Description}</Typography>
-              </CardContent>
-              <CardActions enableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                  <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-
-                <Typography paragraph padding="10px">
-
-                <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
-            
-            </Collapse>
-  
-            </Card>
-    //      </div>
-         
-
-        ))} </Toolbar>
+       {/* <Testimonial data={{Pages,error}} /> */}
       </div>
       <CopyerightZettadaten />
     </div>
   );
-};
+}
 
-Home.getInitialProps = async ctx => {
+
+export default Home;
+
+export const getInitialProps = async ctx => {
   try {
 
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
+    console.log(Pages);
+
     return { Pages };
   } catch (error) {
     return { error };
   }
 };
 
-export default Home;
+
+
+
 

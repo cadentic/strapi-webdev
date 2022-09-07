@@ -73,6 +73,9 @@ import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/Theme';
+//import { wrapper, store } from "../store/store";
+//import { Provider } from "react-redux";
+
 
 import createEmotionCache from '../src/createEmotionCache';
 
@@ -88,10 +91,12 @@ export default function MyApp(props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          {/* <Provider store={store}> */}
+          <Component {...pageProps} />
+          {/* </Provider> */}
         </ThemeProvider>
       </StyledEngineProvider>
     </CacheProvider>
@@ -103,3 +108,5 @@ MyApp.propTypes = {
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };
+
+// export default wrapper.withRedux(MyApp);

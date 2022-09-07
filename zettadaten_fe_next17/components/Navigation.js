@@ -208,7 +208,7 @@ const Navigations = () => {
           </ButtonGroup>
           <Popper
             sx={{
-                zIndex: 1, width: '20%'
+                zIndex: 1, width: '20%', justifyContent: 'flex-end'
             }}
             open={open}
             anchorEl={anchorRef.current}
