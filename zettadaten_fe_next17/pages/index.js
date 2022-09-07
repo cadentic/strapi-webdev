@@ -116,7 +116,7 @@ const Home = ({ Pages, error }) => {
 }
 
 
-export default Home;
+
 
 Home.getInitialProps = async ctx => {
   try {
@@ -131,6 +131,7 @@ Home.getInitialProps = async ctx => {
   }
 };
 
+export default Home;
 //Home.getInitialProps = getInitialProps;
 
 
