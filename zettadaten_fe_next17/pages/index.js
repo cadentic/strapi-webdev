@@ -118,7 +118,7 @@ const Home = ({ Pages, error }) => {
 
 export default Home;
 
-export const getInitialProps = async ctx => {
+Home.getInitialProps = async ctx => {
   try {
 
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
@@ -131,6 +131,7 @@ export const getInitialProps = async ctx => {
   }
 };
 
+//Home.getInitialProps = getInitialProps;
 
 
 
