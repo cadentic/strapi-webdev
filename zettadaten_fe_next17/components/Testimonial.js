@@ -60,7 +60,7 @@ const Testimonial = ({ Pages, error }) => {
     return (
         <div>
             <Toolbar>
-                { Pages.map(Pages => (
+                { Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 
                     <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300" }} elevation={4} position="relative"
