@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import style from "../styles/Home.module.css";
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
-import Card from '@mui/material/Card';
+import { Card, Paper } from '@mui/Material';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import { red } from '@mui/material/colors';
@@ -63,7 +63,7 @@ const Testimonial = ({ Pages, error }) => {
                 { Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 
-                    <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300", hover: "outline - 2" }} elevation={4} position="relative"
+                    <Paper key={`$Pages.id`} variant='outlined'
                         css={css`
           color: #20b2aa;
           :hover {
@@ -118,7 +118,7 @@ const Testimonial = ({ Pages, error }) => {
 
                         </Collapse>
 
-                    </Card>
+                    </Paper>
                     //      </div>
 
 
