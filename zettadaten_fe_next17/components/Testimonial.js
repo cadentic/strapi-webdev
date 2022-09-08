@@ -63,7 +63,7 @@ const Testimonial = ({ Pages, error }) => {
                 { Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 
-                    <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300" }} elevation={4} position="relative"
+                    <Card key={`$Pages.id`} sx={{ flexDirection: 'row', maxWidth: 545, borderRadius: "20px", spacing: "125px", boxShadow: "7px", alignItems: 'stretch', hover: "bg - violet - 300", hover: "outline - 2" }} elevation={4} position="relative"
                         css={css`
           color: #20b2aa;
           :hover {
@@ -78,7 +78,7 @@ const Testimonial = ({ Pages, error }) => {
                             }
                             action={
                                 <IconButton aria-label="settings">
-                                    <MoreVertIcon />
+                                 
                                 </IconButton>
                             }
                             title={Pages.attributes.Title}

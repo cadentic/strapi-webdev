@@ -130,39 +130,7 @@ const Navigations = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle sx={{color: '#F1EFED'}} />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
+         </Menu>
   );
 
 
@@ -178,7 +146,7 @@ const Navigations = () => {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, hover: "outline - 2" }}
           >
             <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
           </IconButton>
@@ -194,7 +162,7 @@ const Navigations = () => {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
-              <Button onClick={handleClick} sx={{ color: '#faf8f7' , border: 2 }}>{options[selectedIndex]}</Button>
+              <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, hover: "outline - 2" }}>{options[selectedIndex]}</Button>
             <Button
               size="small"
               aria-controls={open ? 'split-button-menu' : undefined}
@@ -203,12 +171,12 @@ const Navigations = () => {
               aria-haspopup="menu"
               onClick={handleToggle} 
             >
-                <ArrowDropDownIcon sx={{ color: '#faf8f7' }} />
+                <ArrowDropDownIcon sx={{ color: '#faf8f7', hover: "outline - 2" }} />
             </Button>
           </ButtonGroup>
           <Popper
             sx={{
-                zIndex: 1, width: '20%', justifyContent: 'flex-end'
+                zIndex: 1, width: '20%', justifyContent: 'flex-end', hover: "outline - 2"
             }}
             open={open}
             anchorEl={anchorRef.current}

@@ -129,7 +129,7 @@ import createEmotionCache from '../src/createEmotionCache';
 export default class MyDocument extends Document {
     render() {
         return (
-            <Html lang="en" classes="scroll-smooth hover:scroll-auto">
+            <Html lang="en" className="scroll-smooth hover:scroll-auto ">
                 <Head>
                     {/* PWA primary color */}
                     <meta name="theme-color" content={theme.palette.primary.main} />
