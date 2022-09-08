@@ -63,7 +63,7 @@ const Testimonial = ({ Pages, error }) => {
                 { Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 
-                    <Paper key={`$Pages.id`} variant='outlined'
+                    <Paper key={`$Pages.id`} variant='outlined' style={{ margin: "16px 0px", border: "1px solid black" }}
                         css={css`
           color: #20b2aa;
           :hover {
