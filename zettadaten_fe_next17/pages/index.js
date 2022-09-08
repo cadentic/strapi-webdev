@@ -101,8 +101,7 @@ const Home = ({ Pages, error }) => {
   // setPages(await res.json())
 
   return (
-    <div>
-      
+    <div>      
       <Navigations />
      {/*  <TabbedSection /> */}
       <div className={style.main}>
