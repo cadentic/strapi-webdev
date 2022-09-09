@@ -28,11 +28,11 @@ const DropDownPaperSection = ({ Pages, error }) => {
   }
   return (
     <>
-    <Toolbar sx={{ bgcolor : '#e7e3df'}}>
+      <Toolbar sx={{ bgcolor: '#e7e3df' }} spacing={2} >
       {Pages.data.map(Pages => (
         //<div classname={style.main}> 
 
-        <Box key={`$Pages.id`} variant='outlined' spacing={2 } elevation={1} style={{ margin: "16px 0px", border: "1px solid black" }}
+        <Box key={`$Pages.id`} variant='outlined' spacing={2 } elevation={1} style={{  margin: "16px 0px", border: "1px solid black" }}
           css={css`
           color: #20b2aa;
           :hover {
