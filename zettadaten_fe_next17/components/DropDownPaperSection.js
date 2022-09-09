@@ -27,7 +27,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
     return <div className={style.Container} >An error occured: {error.message}</div>;
   }
   return (
-    <>
+    <React.Fragment>
       <Toolbar sx={{ bgcolor: '#e7e3df' }} spacing={2} >
       {Pages.data.map(Pages => (
         //<div classname={style.main}> 
@@ -69,7 +69,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
         </Box>    
         
       ))} </Toolbar>
-    </>
+    </React.Fragment>
   )
 }
 
