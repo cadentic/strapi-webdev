@@ -38,11 +38,11 @@ const DropDownPaperSection = ({ Pages, error }) => {
           :hover {
             color: #2e8b57;
           }
-        `} sx={{ flexDirection: 'column' }} enableSpacing>
+        `} sx={{ flexDirection: 'column', flexWrap: 'wrap' }} enableSpacing>
           {/* {Pages.attributes.Title}
            {Pages.attributes.createdAt}
         */}
-          <Box sx={{ flexDirection: 'column' ,padding: "16px" }}>
+          <Box sx={{ flexDirection: 'column', padding: "16px", flexWrap: 'wrap' }}>
 
             <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
               {Pages.attributes.Title}</Typography>
