@@ -7,25 +7,6 @@ import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
 //import Container from "@mui/material";
 import style from "../styles/Home.module.css";
-import Typography from '@mui/material/Typography';
-import CardContent from '@mui/material/CardContent';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import { red } from '@mui/material/colors';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Rating from '@mui/material/Rating';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Box from '@mui/material/Box';
-import { css } from '@emotion/react';
 import Navigations from '../components/Navigation.js';
 import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
@@ -105,8 +86,8 @@ const Home = ({ Pages, error }) => {
       <Navigations />
      {/*  <TabbedSection /> */}
       <div className={style.main}>
-      <HeroSection />
-       < DropDownPaperSection />
+      <HeroSection  />
+        < DropDownPaperSection Pages={Pages} error={error} />
         <Testimonial Pages={Pages} error={error} /> 
       </div>
       <CopyerightZettadaten />
