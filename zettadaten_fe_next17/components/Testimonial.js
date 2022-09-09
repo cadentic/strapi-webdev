@@ -58,7 +58,7 @@ const Testimonial = ({ Pages, error }) => {
     }
     return (
         <div>
-            <Toolbar>
+            <Toolbar xs={2} spacing={2}>
                 { Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 

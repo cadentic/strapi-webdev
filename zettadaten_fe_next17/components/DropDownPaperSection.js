@@ -28,7 +28,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
   }
   return (
     <React.Fragment>
-      <Toolbar sx={{ bgcolor: '#e7e3df' }} spacing={2} >
+      <Toolbar sx={{ bgcolor: '#e7e3df' }} spacing={2} xs={2}>
       {Pages.data.map(Pages => (
         //<div classname={style.main}> 
 
