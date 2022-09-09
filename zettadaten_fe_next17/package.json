@@ -19,6 +19,8 @@
     "@mui/icons-material": "latest",
     "@mui/lab": "^5.0.0-alpha.98",
     "@mui/material": "latest",
+    "@mui/x-data-grid": "^5.17.1",
+    "@mui/x-date-pickers": "^5.0.0",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
