@@ -1,5 +1,5 @@
 {
-    "name": "@nuxt/strapi-webdev",
+    "name": "nuxt-strapi-webdev",
     "description": "Boilerplate with strapi and next laravel and nuxtjs",
     "version": "1.0.0",
     "private": false,
@@ -22,9 +22,6 @@
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/cadentic/strapi-webdev/issues"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/@cadentic"
     },
     "homepage": "https://github.com/cadentic/strapi-webdev"
 }
