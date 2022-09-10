@@ -104,9 +104,11 @@ Home.getInitialProps = async ctx => {
 
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
-//    console.log(Pages);
-
-    return { Pages };
+//    console.log(Pages);     
+    const homeAccorditionRes = await axios.get('http://localhost:1337/api/' + 'home-accordition');
+    const HomeAccordition = homeAccorditionRes.data;
+    return { Pages, HomeAccordition };
+  //  return { HomeAccordition };
   } catch (error) {
     return { error };
   }
