@@ -15,6 +15,7 @@ import HeroSection from "../components/HeroSection";
 import TabbedSection from "../components/TabbedSection";
 import DropDownPaperSection from "../components/DropDownPaperSection";
 import Testimonial from "../components/Testimonial";
+import Error from "next/error";
 import Link from "next/link";
 
 //import { style } from "@mui/system";
@@ -77,18 +78,18 @@ export async function getServerSideProps() {
 
 
 const Home = ({ Pages, error }) => {
-// }
- // const [Pages, setPages] = useState()
+  // }
+  // const [Pages, setPages] = useState()
   // setPages(await res.json())
 
   return (
-    <div>      
+    <div>
       <Navigations />
-     {/*  <TabbedSection /> */}
+      {/*  <TabbedSection /> */}
       <div className={style.main}>
-      <HeroSection  />
+        <HeroSection />
         < DropDownPaperSection Pages={Pages} error={error} />
-        <Testimonial Pages={Pages} error={error} /> 
+        <Testimonial Pages={Pages} error={error} />
       </div>
       <CopyerightZettadaten />
     </div>
@@ -103,7 +104,7 @@ Home.getInitialProps = async ctx => {
 
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
-    console.log(Pages);
+//    console.log(Pages);
 
     return { Pages };
   } catch (error) {

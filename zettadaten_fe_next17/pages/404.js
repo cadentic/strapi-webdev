@@ -8,7 +8,7 @@ const FourOhFour = () => {
   return (
             <main className={style.main}>
           <Head>
-              <title>Create Next App</title>
+              <title>Buddy You Made Our Day</title>
               <link rel="icon" href="/favicon.ico" />
 </Head>
               <h1 className={style.title}>

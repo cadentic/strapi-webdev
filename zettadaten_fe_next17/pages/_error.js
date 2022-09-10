@@ -1,13 +1,15 @@
 import Head from 'next/Head';
 import Copyright from '../src/Copyright';
 import style from "../styles/Home.module.css";
+import Navigation from "../components/Navigation";
 
 function Error({ statusCode }) {
     return (
        
-        <main className={style.main}>
+      <main className={style.main}>
+        <Navigation />
        <Head>
-  <title>Create Next App</title>
+  <title>We are on an Error pages</title>
   <link rel="icon" href="/favicon.ico" />
 </Head>
   <h1 className={style.title}>
