@@ -2,6 +2,7 @@ import Head from 'next/Head';
 import Copyright from '../src/Copyright';
 import style from "../styles/Home.module.css";
 import Navigation from "../components/Navigation";
+import MuLink from '../src/Link';
 
 function Error({ statusCode }) {
     return (
@@ -13,9 +14,9 @@ function Error({ statusCode }) {
   <link rel="icon" href="/favicon.ico" />
 </Head>
   <h1 className={style.title}>
-    Welcome to <a href="https://zettadaten.com">
-      CADENTIC ZETTADATEN™</a> integrated with{" "}
-                <a href="https://cadentic.net">CADENTIC®</a>
+    Welcome to <MuLink href="https://zettadaten.com">
+      CADENTIC ZETTADATEN™</MuLink> integrated with{" "}
+                <MuLink href="https://cadentic.net">CADENTIC®</MuLink>
                 
   </h1>
             <p className={style.description}>

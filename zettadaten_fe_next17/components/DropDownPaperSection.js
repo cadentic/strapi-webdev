@@ -4,6 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Devider from '@mui/material/Divider';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
+import style from '../styles/Home.module.css';
 import { css } from '@emotion/react';
 import { Rating, Paper, Card, Box, CardHeader, CardContent, CardMedia, CardActions, Toolbar, Typography, Collapse } from '@mui/material';
 

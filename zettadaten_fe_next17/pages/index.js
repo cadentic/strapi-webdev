@@ -77,7 +77,7 @@ export async function getServerSideProps() {
 */
 
 
-const Home = ({ Pages, error }) => {
+const Home = ({ Pages, HomeAccordition, error }) => {
   // }
   // const [Pages, setPages] = useState()
   // setPages(await res.json())
@@ -88,7 +88,7 @@ const Home = ({ Pages, error }) => {
       {/*  <TabbedSection /> */}
       <div className={style.main}>
         <HeroSection />
-        < DropDownPaperSection Pages={Pages} error={error} />
+        < DropDownPaperSection Pages={HomeAccordition} error={error} />
         <Testimonial Pages={Pages} error={error} />
       </div>
       <CopyerightZettadaten />
