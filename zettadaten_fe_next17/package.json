@@ -1,7 +1,7 @@
 {
-  "name": "zettadaten_fe_next17",
+  "name": "zettadaten_boiler_pallete",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev -p 4845",
     "build": "next build",
@@ -55,5 +55,16 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cadentic/strapi-webdev.git"
+  },
+  "keywords": [],
+  "author": "appsdbaevaxp.sayantan@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cadentic/strapi-webdev/issues"
+  },
+  "homepage": "https://github.com/cadentic/strapi-webdev"
 }
