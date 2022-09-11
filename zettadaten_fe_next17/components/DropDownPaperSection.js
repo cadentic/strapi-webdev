@@ -40,7 +40,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
           :hover {
             color: #2e8b57;
           }
-        `} sx={{ flexDirection: 'column', flexWrap: 'wrap' }} enableSpacing>
+        `} sx={{ flexDirection: 'column', flexWrap: 'wrap', zIndex: 'tooltip' }} enableSpacing>
           {/* {Pages.attributes.Title}
            {Pages.attributes.createdAt}
         */}
@@ -70,7 +70,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
             <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box>
             </Portal>
           </Collapse>
-          <Box sx={{ p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1 }} key={`$Pages.id`} ref={container} />
+          <Box sx={{ p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1, zIndex: 'tooltip' }} key={`$Pages.id`} ref={container} />
         </Box>    
         
       ))} </Toolbar>
