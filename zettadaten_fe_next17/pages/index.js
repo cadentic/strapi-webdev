@@ -77,7 +77,7 @@ export async function getServerSideProps() {
 */
 
 
-const Home = ({ Pages, HomeAccordition, error }) => {
+const Home = ({ Pages, error }) => {
   // }
   // const [Pages, setPages] = useState()
   // setPages(await res.json())
@@ -88,7 +88,7 @@ const Home = ({ Pages, HomeAccordition, error }) => {
       {/*  <TabbedSection /> */}
       <div className={style.main}>
         <HeroSection />
-        < DropDownPaperSection Pages={HomeAccordition} error={error} />
+        < DropDownPaperSection Pages={Pages} error={error} />
         <Testimonial Pages={Pages} error={error} />
       </div>
       <CopyerightZettadaten />
@@ -105,9 +105,7 @@ Home.getInitialProps = async ctx => {
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
 //    console.log(Pages);     
-    const homeAccorditionRes = await axios.get('http://localhost:1337/api/' + 'home-accordition');
-    const HomeAccordition = homeAccorditionRes.data;
-    return { Pages, HomeAccordition };
+    return { Pages};
   //  return { HomeAccordition };
   } catch (error) {
     return { error };
