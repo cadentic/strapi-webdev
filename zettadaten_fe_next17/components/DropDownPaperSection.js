@@ -66,11 +66,13 @@ const DropDownPaperSection = ({ Pages, error }) => {
             <Typography paragraph padding="10px">
 
               <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Description} </Box></Typography>
-            <Devider />
-            <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box>
+              <Devider />
+              <Typography paragraph padding="10px">
+                <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
+              <Devider />
             </Portal>
           </Collapse>
-          <Box sx={{ p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1, zIndex: 'tooltip' }} key={`$Pages.id`} ref={container} />
+          <Box  sx={{ p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1, zIndex: 'tooltip' }} key={`$Pages.id`} ref={container} />
         </Box>    
         
       ))} </Toolbar>
