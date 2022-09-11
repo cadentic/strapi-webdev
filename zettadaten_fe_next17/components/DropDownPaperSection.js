@@ -61,7 +61,7 @@ const DropDownPaperSection = ({ Pages, error }) => {
             </ExpandMore>
           </Box>
           
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <Collapse key={`$Pages.id`} in={expanded} timeout="auto" unmountOnExit>
             <Portal container={container.current} key={`$Pages.id`}>
             <Typography paragraph padding="10px">
 
