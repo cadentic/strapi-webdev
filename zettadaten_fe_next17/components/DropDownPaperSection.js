@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
 import style from '../styles/Home.module.css';
 import { css } from '@emotion/react';
-import { Rating, Paper, Card, Box, CardHeader, CardContent, CardMedia, CardActions, Toolbar, Typography, Collapse } from '@mui/material';
+import { Portal, Rating, Paper, Card, Box, CardHeader, CardContent, CardMedia, CardActions, Toolbar, Typography, Collapse } from '@mui/material';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,6 +21,7 @@ const ExpandMore = styled((props) => {
 
 const DropDownPaperSection = ({ Pages, error }) => {
   const [expanded, setExpanded] = React.useState(false);
+  const container = React.useRef(null);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -59,14 +60,17 @@ const DropDownPaperSection = ({ Pages, error }) => {
               <ExpandMoreIcon />
             </ExpandMore>
           </Box>
+          
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-
+            <Portal container={container.current} key={`$Pages.id`}>
             <Typography paragraph padding="10px">
 
               <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Description} </Box></Typography>
             <Devider />
             <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box>
+            </Portal>
           </Collapse>
+          <Box sx={{ p: 1, my: 1, border: '1px solid' }} key={`$Pages.id`} ref={container} />
         </Box>    
         
       ))} </Toolbar>
