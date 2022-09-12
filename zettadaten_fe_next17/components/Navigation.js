@@ -137,20 +137,23 @@ const Navigations = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-
+      <Toolbar sx={{zIndex: 10}}>
+      <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' />
+        
+      </Toolbar>
       <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#faf8f7'}}>
         <Toolbar>
-          <Image src="/favicon.ico" alt="lol" width="160" height="16" />
+         
+          
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2, hover: "outline - 2" }}
+            sx={{ mr: 2, hover: "outline - 2" , pl: 2 }}
           >
             <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
           </IconButton>
-
 
           {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
@@ -159,60 +162,62 @@ const Navigations = () => {
  
           </Typography>  */}
 
+
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
               <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, hover: "outline - 2" }}>{options[selectedIndex]}</Button>
-            <Button
-              size="small"
-              aria-controls={open ? 'split-button-menu' : undefined}
-              aria-expanded={open ? 'true' : undefined}
-              aria-label="select merge strategy"
-              aria-haspopup="menu"
-              onClick={handleToggle} 
-            >
+              <Button
+                size="small"
+                aria-controls={open ? 'split-button-menu' : undefined}
+                aria-expanded={open ? 'true' : undefined}
+                aria-label="select merge strategy"
+                aria-haspopup="menu"
+                onClick={handleToggle}
+              >
                 <ArrowDropDownIcon sx={{ color: '#faf8f7', hover: "outline - 2" }} />
-            </Button>
-          </ButtonGroup>
-          <Popper
-            sx={{
+              </Button>
+            </ButtonGroup>
+            <Popper
+              sx={{
                 zIndex: 1, width: '20%', justifyContent: 'flex-end', hover: "outline - 2"
-            }}
-            open={open}
-            anchorEl={anchorRef.current}
-            role={undefined}
-            transition
-            disablePortal
-          >
-            {({ TransitionProps, placement }) => (
-              <Grow
+              }}
+              open={open}
+              anchorEl={anchorRef.current}
+              role={undefined}
+              transition
+              disablePortal
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow sx={{ zIndex: '10' }}
                   {...TransitionProps}
                   style={{
                     transformOrigin:
                       placement === 'bottom' ? 'center top' : 'center bottom',
                   }}
-                   >
-                <Paper>
-                  <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
-                      {options.map((option, index) => (
-                        <MenuItem
-                          key={option}
-                          disabled={index === 2}
-                          selected={index === selectedIndex}
-                          onClick={(event) => handleMenuItemClick(event, index)}
-                        >
-                          {option}
-                        </MenuItem>
-                      ))}
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
+                >
+                  <Paper>
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
+                        {options.map((option, index) => (
+                          <MenuItem
+                            key={option}
+                            disabled={index === 2}
+                            selected={index === selectedIndex}
+                            onClick={(event) => handleMenuItemClick(event, index)}
+                          >
+                            {option}
+                          </MenuItem>
+                        ))}
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
             </Popper>
-            
-            </Box>
+
+          </Box> 
         </Toolbar>
       </AppBar>
 

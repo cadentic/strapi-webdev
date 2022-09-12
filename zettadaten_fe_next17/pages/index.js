@@ -86,6 +86,9 @@ const Home = ({ Pages, error }) => {
 
   return (
     <div>
+      <Head>
+
+      </Head>
       <Navigations />
       {/*  <TabbedSection /> */}
       <div className={style.main}>
