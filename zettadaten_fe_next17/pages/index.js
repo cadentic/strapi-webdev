@@ -17,6 +17,8 @@ import DropDownPaperSection from "../components/DropDownPaperSection";
 import Testimonial from "../components/Testimonial";
 import Error from "next/error";
 import Link from "next/link";
+import FooterComponent from "../components/FooterComponent";
+
 
 //import { style } from "@mui/system";
 
@@ -91,6 +93,7 @@ const Home = ({ Pages, error }) => {
         < DropDownPaperSection Pages={Pages} error={error} />
         <Testimonial Pages={Pages} error={error} />
       </div>
+      <FooterComponent />
       <CopyerightZettadaten />
     </div>
   );

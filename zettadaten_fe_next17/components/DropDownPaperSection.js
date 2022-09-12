@@ -31,51 +31,51 @@ const DropDownPaperSection = ({ Pages, error }) => {
   return (
     <React.Fragment>
       <Toolbar sx={{ bgcolor: '#e7e3df' }} spacing={2} xs={2}>
-      {Pages.data.map(Pages => (
-        //<div classname={style.main}> 
+        {Pages.data.map(Pages => (
+          //<div classname={style.main}> 
 
-        <Box key={`$Pages.id`} variant='outlined' spacing={2 } elevation={1} style={{  margin: "16px 0px", border: "1px solid black" }}
-          css={css`
-          color: #20b2aa;
+          <Box key={`$Pages.id`} variant='outlined' spacing={2} elevation={1} style={{ margin: "16px 0px", border: "1px solid black" }}
+            css={css`
+          color: #000;
           :hover {
-            color: #2e8b57;
+            color: #fef8f7;
           }
         `} sx={{ flexDirection: 'column', flexWrap: 'wrap', zIndex: 'tooltip' }} enableSpacing>
-          {/* {Pages.attributes.Title}
+            {/* {Pages.attributes.Title}
            {Pages.attributes.createdAt}
         */}
-          <Box sx={{ flexDirection: 'column', padding: "16px", flexWrap: 'wrap' }}>
+            <Box sx={{ color: '#fef8f7', flexDirection: 'column', padding: "16px", flexWrap: 'wrap' }}>
 
-            <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
-              {Pages.attributes.Title}</Typography>
-          </Box>
-        
-          <Box enableSpacing>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </Box>
-          
-          <Collapse key={`$Pages.id`} in={expanded} timeout="auto" unmountOnExit>
-            <Portal container={container.current} key={`$Pages.id`}>
-            <Typography paragraph padding="10px">
+              <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
+                {Pages.attributes.Title}</Typography>
+            </Box>
 
-              <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Description} </Box></Typography>
-              <Devider />
-              <Typography paragraph padding="10px">
-                <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
-              <Devider />
-            </Portal>
-          </Collapse>
-          <Box  sx={{ p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1, zIndex: 'tooltip' }} key={`$Pages.id`} ref={container} />
-        </Box>    
-        
-      ))} </Toolbar>
+            <Box enableSpacing>
+              <ExpandMore
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </Box>
+
+            <Collapse key={`$Pages.id`} in={expanded} timeout="auto" unmountOnExit>
+              <Portal container={container.current} key={`$Pages.id`}>
+                <Typography paragraph padding="10px">
+
+                  <Box sx={{ my: 8, spacing: 10, margin: 2, boxShadow: 2 }} key={`$Pages.id`}>  {Pages.attributes.Description} </Box></Typography>
+                <Devider />
+                <Typography paragraph padding="10px">
+                  <Box sx={{ my: 8, spacing: 10, margin: 2, boxShadow: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
+                <Devider />
+              </Portal>
+            </Collapse>
+            <Box sx={{ boxShadow: 2, p: 1, my: 1, border: '1px solid', flexWrap: 'wrap', flexGrow: 1, flexShrink: 1, zIndex: 'tooltip' }} key={`$Pages.id`} ref={container} />
+          </Box>
+
+        ))} </Toolbar>
     </React.Fragment>
   )
 }
