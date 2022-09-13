@@ -117,27 +117,31 @@ Home.getInitialProps = async ctx => {
     return { error };
   }
 /*
-  let one =
-  "https://api.storyblok.com/v1/cdn/stories/health?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
-let two =
-  "https://api.storyblok.com/v1/cdn/datasources/?token=wANpEQEsMYGOwLxwXQ76Ggtt";
-let three =
-  "https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt";
+  let Pages =
+  "'http://localhost:1337/api/' + 'pages'";
+let homeAaccorditions =
+  "'http://localhost:1337/api/' + 'home-accorditions'";
+let Menus =
+  "'http://localhost:1337/api/' + 'menus'";
 
-const requestOne = axios.get(one);
-const requestTwo = axios.get(two);
-const requestThree = axios.get(three);
+let HeroSections =
+ "'http://localhost:1337/api/' + 'hero-sections'";
+const requestPages = axios.get(Pages);
+const requesthomeAaccorditions = axios.get(homeAaccorditions);
+const requestMenus = axios.get(Menus);
+const requestHeroSections = axios.get(HeroSections);
 
 axios
-  .all([requestOne, requestTwo, requestThree])
+  .all([requestPages, requesthomeAaccorditions, requestMenus, requestHeroSections])
   .then(
     axios.spread((...responses) => {
-      const responseOne = responses[0];
-      const responseTwo = responses[1];
-      const responesThree = responses[2];
+      const requestPages = responses[0];
+      const requesthomeAaccorditions = responses[1];
+      const requestMenus = responses[2];
+      const requesthomeAaccorditions = responses[3];
 
       // use/access the results
-      console.log(responseOne, responseTwo, responesThree);
+      console.log(requestPages, requesthomeAaccorditions, requestMenus, requesthomeAaccorditions );
     })
   )
   .catch(errors => {
