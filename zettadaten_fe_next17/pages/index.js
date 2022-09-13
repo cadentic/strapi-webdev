@@ -141,6 +141,7 @@ axios
       const requesthomeAaccorditions = responses[3];
 
       // use/access the results
+      
       console.log(requestPages, requesthomeAaccorditions, requestMenus, requesthomeAaccorditions );
     })
   )
