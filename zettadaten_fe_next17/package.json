@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start -p 4895",
     "lint": "next lint",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "dependencies": {
@@ -30,9 +31,11 @@
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "axios": "latest",
+    "dotenv": "^16.0.2",
     "moment": "^2.29.4",
     "next": "12.2.5",
     "next-redux-wrapper": "^7.0.5",
+    "next-sitemap": "^3.1.22",
     "nouislider": "^15.6.1",
     "postcss": "latest",
     "prop-types": "^15.8.1",
