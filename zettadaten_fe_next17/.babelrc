@@ -1,7 +1,8 @@
 
 {
   "presets": [
-    "next/babel"
+    "next/babel",
+    "@babel/preset-env"
   ],
   "plugins": [
     "styled-components"
