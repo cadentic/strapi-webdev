@@ -1,10 +1,10 @@
-
 {
   "presets": [
     "next/babel",
     "@babel/preset-env"
   ],
   "plugins": [
-    "styled-components"
+    "styled-components",
+    "babel-plugin-macros"
   ]
 }
