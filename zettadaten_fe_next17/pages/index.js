@@ -138,7 +138,7 @@ axios
       const requestPages = responses[0];
       const requesthomeAaccorditions = responses[1];
       const requestMenus = responses[2];
-      const requesthomeAaccorditions = responses[3];
+      const requestHeroSections = responses[3];
 
       // use/access the results
       
