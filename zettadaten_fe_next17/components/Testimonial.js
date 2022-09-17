@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import style from "../styles/Home.module.css";
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
-import { Card, Paper } from '@mui/Material';
+import { Card, Paper, Button } from '@mui/Material';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import { red } from '@mui/material/colors';
@@ -33,7 +33,12 @@ import Image from 'next/image';
 import HeroSection from "../components/HeroSection";
 import TabbedSection from "../components/TabbedSection";
 import DropDownPaperSection from "../components/DropDownPaperSection";
+import MuLink from "../src/Link";
 // import Testimonial from "../components/Testimonial";
+
+
+
+
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -59,7 +64,7 @@ const Testimonial = ({ Pages, error }) => {
     return (
         <div>
             <Toolbar xs={2} spacing={2}>
-                { Pages.data.map(Pages => (
+                {Pages.data.map(Pages => (
                     //<div classname={style.main}> 
 
                     <Paper key={`$Pages.id`} variant='outlined' elevation={1} style={{ margin: "16px 0px", border: "1px solid black" }}
@@ -77,7 +82,7 @@ const Testimonial = ({ Pages, error }) => {
                             }
                             action={
                                 <IconButton aria-label="settings">
-                                 
+
                                 </IconButton>
                             }
                             title={Pages.attributes.Title}
@@ -114,7 +119,25 @@ const Testimonial = ({ Pages, error }) => {
                             <Typography paragraph padding="10px">
 
                                 <Box sx={{ my: 8, spacing: 10, margin: 2 }} key={`$Pages.id`}>  {Pages.attributes.Content} </Box></Typography>
-
+                            <Button css={css` 
+  display: flex;
+  align-items: center;
+  justify-content: center;                          
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-left: 10px;
+  :hover {
+            color: #3e2723;
+            border:2px solid #3e2723;
+            border-color: #3e2723;
+            transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out .7s;
+          }
+`}>  Click for More </Button>
                         </Collapse>
 
                     </Paper>
