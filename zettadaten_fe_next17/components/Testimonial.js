@@ -137,7 +137,7 @@ const Testimonial = ({ Pages, error }) => {
             border-color: #3e2723;
             transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out .7s;
           }
-`}>  Click for More </Button>
+`} >  Click for More </Button>
                         </Collapse>
 
                     </Paper>
