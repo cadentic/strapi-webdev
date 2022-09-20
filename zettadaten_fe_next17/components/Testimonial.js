@@ -51,7 +51,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-const Testimonial = ({ Pages, error }) => {
+const Testimonial = ({ Pages, error, requestMyImages }) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -88,7 +88,7 @@ const Testimonial = ({ Pages, error }) => {
                             title={Pages.attributes.Title}
                             subheader={Pages.attributes.createdAt}
                         />
-                        <CardMedia component="img" height="200" image="/favicon.ico" alt="Paella dish" />
+                        <CardMedia component="img" height="200" image={requestMyImages} alt="Paella dish" />
                         {/* 
            <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
             */}

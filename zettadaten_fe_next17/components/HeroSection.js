@@ -18,14 +18,15 @@ import { CardMedia } from '@mui/material';
 
 const HeroSection = () => {
     return (
-        <div>
+        <React.Fragment>
     {/*        <Grid container spacing={3}>
                 <Grid item xs={8}>
                     <Item><Container maxWidth="sm">
                     <CardMedia component="img" height="200" image="/profile.png" alt="Paella dish" /></Container>
                     </Item> </Grid>
             </Grid>
-    */}        </div>
+            
+    */}        </React.Fragment>
     ) 
 }
 

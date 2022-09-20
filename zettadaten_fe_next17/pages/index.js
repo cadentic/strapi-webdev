@@ -79,7 +79,7 @@ export async function getServerSideProps() {
 */
 
 
-const Home = ({ Pages, error }) => {
+const Home = ({ requestMyImages,requestPages,Pages, error }) => {
   // }
   // const [Pages, setPages] = useState()
   // setPages(await res.json())
@@ -93,8 +93,8 @@ const Home = ({ Pages, error }) => {
       {/*  <TabbedSection /> */}
       <div className={style.main}>
         <HeroSection />
-        < DropDownPaperSection Pages={Pages} error={error} />
-        <Testimonial Pages={Pages} error={error} />
+        {/*    < DropDownPaperSection Pages={requestPages} error={error} /> */}
+        <Testimonial Pages={requestPages} requestMyImages={requestMyImages} error={error} />
       </div>
       <FooterComponent />
       <CopyerightZettadaten />
@@ -107,7 +107,7 @@ const Home = ({ Pages, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-
+    {/*
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
 //    console.log(Pages);     
@@ -116,40 +116,43 @@ Home.getInitialProps = async ctx => {
   } catch (error) {
     return { error };
   }
-/*
-  let Pages =
-  "'http://localhost:1337/api/' + 'pages'";
-let homeAaccorditions =
-  "'http://localhost:1337/api/' + 'home-accorditions'";
-let Menus =
-  "'http://localhost:1337/api/' + 'menus'";
+*/}
+    let Pages =
+      "'http://localhost:1337/api/' + 'pages'";
+   // let homeAaccorditions =
+   //   "'http://localhost:1337/api/' + 'home-accorditions'";
+   // let Menus =
+    //  "'http://localhost:1337/api/' + 'menus'";
 
-let HeroSections =
- "'http://localhost:1337/api/' + 'hero-sections'";
-const requestPages = axios.get(Pages);
-const requesthomeAaccorditions = axios.get(homeAaccorditions);
-const requestMenus = axios.get(Menus);
-const requestHeroSections = axios.get(HeroSections);
+   // let HeroSections =
+   //   "'http://localhost:1337/api/' + 'hero-sections'";
+    let myimages = "'http://localhost:1337/api/pages?populate=*'";
+    const requestPages = axios.get(Pages);
+   // const requesthomeAaccorditions = axios.get(homeAaccorditions);
+  //  const requestMenus = axios.get(Menus);
+  //  const requestHeroSections = axios.get(HeroSections);
+    const requestMyImages = axios.get(myimages);
+    axios
+      .all([requestPages, requestMyImages ]) // requesthomeAaccorditions, requestMenus, requestHeroSections])
+      .then(
+        axios.spread((...responses) => {
+          const requestPages = responses[0];
+          //  const requesthomeAaccorditions = responses[1];
+          //  const requestMenus = responses[2];
+          //  const requestHeroSections = responses[3];
+          requestMyImages = responses[2];
 
-axios
-  .all([requestPages, requesthomeAaccorditions, requestMenus, requestHeroSections])
-  .then(
-    axios.spread((...responses) => {
-      const requestPages = responses[0];
-      const requesthomeAaccorditions = responses[1];
-      const requestMenus = responses[2];
-      const requestHeroSections = responses[3];
-
-      // use/access the results
+          // use/access the results
       
-      console.log(requestPages, requesthomeAaccorditions, requestMenus, requesthomeAaccorditions );
-    })
+          // console.log(requestPages, requesthomeAaccorditions, requestMenus, requestHeroSections);
+          return { requestPages, requestMyImages }; //requesthomeAaccorditions, requestMenus, requestHeroSections };
+        })
+     
   )
-  .catch(errors => {
-    // react on errors.
-    console.error(errors);
-  });
-*/
+  } catch (error) {
+    return { error };
+  }
+
 };
 
 export default Home;
