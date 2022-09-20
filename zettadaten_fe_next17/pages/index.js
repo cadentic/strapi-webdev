@@ -79,11 +79,13 @@ export async function getServerSideProps() {
 */
 
 
-const Home = ({ requestMyImages,requestPages,Pages, error }) => {
+const Home = ({ Pages, images, error }) => {
   // }
   // const [Pages, setPages] = useState()
   // setPages(await res.json())
-
+  //console.log(images);
+  //JSON.stringify(Pages, null, 2)
+  //JSON.stringify(images, null, 2)
   return (
     <div>
       <Head>
@@ -94,7 +96,7 @@ const Home = ({ requestMyImages,requestPages,Pages, error }) => {
       <div className={style.main}>
         <HeroSection />
         {/*    < DropDownPaperSection Pages={requestPages} error={error} /> */}
-        <Testimonial Pages={requestPages} requestMyImages={requestMyImages} error={error} />
+        <Testimonial Pages={Pages} requestMyImages={images} error={error} />
       </div>
       <FooterComponent />
       <CopyerightZettadaten />
@@ -107,16 +109,18 @@ const Home = ({ requestMyImages,requestPages,Pages, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    {/*
+
     const res = await axios.get('http://localhost:1337/api/' + 'pages');
     const Pages = res.data;
-//    console.log(Pages);     
-    return { Pages};
-  //  return { HomeAccordition };
+    const res2 = await axios.get('http://localhost:1337/api/pages?populate=*')
+    //    console.log(Pages);
+    const images = res2.data;
+    return { Pages, images };
+    //  return { HomeAccordition };
   } catch (error) {
     return { error };
   }
-*/}
+  {/*
     let Pages =
       "'http://localhost:1337/api/' + 'pages'";
    // let homeAaccorditions =
@@ -136,23 +140,28 @@ Home.getInitialProps = async ctx => {
       .all([requestPages, requestMyImages ]) // requesthomeAaccorditions, requestMenus, requestHeroSections])
       .then(
         axios.spread((...responses) => {
-          const requestPages = responses[0];
+  //        const requestPages = responses[0];
           //  const requesthomeAaccorditions = responses[1];
           //  const requestMenus = responses[2];
           //  const requestHeroSections = responses[3];
-          requestMyImages = responses[2];
+          const requestMyImages = responses[2];
 
           // use/access the results
       
           // console.log(requestPages, requesthomeAaccorditions, requestMenus, requestHeroSections);
-          return { requestPages, requestMyImages }; //requesthomeAaccorditions, requestMenus, requestHeroSections };
+          return {
+            
+             // requestPages,
+              requestMyImages,
+            
+          }; //requesthomeAaccorditions, requestMenus, requestHeroSections };
         })
      
-  )
+      ) 
   } catch (error) {
     return { error };
   }
-
+*/}
 };
 
 export default Home;

@@ -8,6 +8,9 @@ const nextConfig = {
 }
 
 module.exports = {
+  images: {
+    domains: ["localhost"],
+  },
   i18n: {
     locales: ['en-US', 'fr', 'nl-NL', 'nl-BE'],
     defaultLocale: 'en-US',
