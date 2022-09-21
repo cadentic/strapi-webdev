@@ -197,7 +197,7 @@ const Navigations = () => {
                       placement === 'bottom' ? 'center top' : 'center bottom',
                   }}
                 >
-                  <Paper>
+                  <Paper sx={{height:'100%'}}>
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
                         {options.map((option, index) => (
