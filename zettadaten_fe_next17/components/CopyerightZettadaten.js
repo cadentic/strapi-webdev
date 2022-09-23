@@ -33,7 +33,7 @@ const CopyerightZettadaten = ({ FooterLink , error}) => {
           </Grid2>
           
           </Grid2>
-        ))};
+        ))}
         </Box>
         
       <Paper>

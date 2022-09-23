@@ -141,7 +141,7 @@ const Navigations = () => {
       <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' />
         
       </Toolbar>
-      <AppBar position="sticky" bgcolor="Colors.brown" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#faf8f7'}}>
+      <AppBar position="sticky" bgcolor="Colors.brown" maxWidth="sm" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#faf8f7'}}>
         <Toolbar>
          
           
@@ -165,7 +165,7 @@ const Navigations = () => {
 
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box position='left' sx={{ display: { xs: 'none', md: 'flex' } }}>
             <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
               <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, hover: "outline - 2" }}>{options[selectedIndex]}</Button>
               <Button

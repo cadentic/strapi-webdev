@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { styled } from '@mui/system';
+import { styled } from '@mui/material/styles';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import { Button} from '@mui/base';
+import { css } from '@emotion/react';
+//import { StyledComponent } from '@mui/material/styles';
+
 
 const blue = {
     50: '#F0F7FF',
@@ -60,7 +64,7 @@ const Tab = styled(TabUnstyled)`
 
   &.${tabUnstyledClasses.selected} {
     background-color: #3a3632;
-    color: ${grey[900]};
+    color: ${grey[50]};
   }
 
   &.${buttonUnstyledClasses.disabled} {
@@ -75,8 +79,8 @@ const TabPanel = styled(TabPanelUnstyled)(
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
   padding: 20px 12px;
-  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-  border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
+  background: ${theme.palette.mode === 'dark' ? grey[900] : grey[700]};
+  border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : blue[200]};
   border-radius: 12px;
   opacity: 0.6;
   `,
@@ -85,7 +89,7 @@ const TabPanel = styled(TabPanelUnstyled)(
 const TabsList = styled(TabsListUnstyled)(
     ({ theme }) => `
   min-width: 400px;
-  background-color: //${blue[500]};
+  background-color: ${blue[50]};
   border-radius: 12px;
   margin-bottom: 16px;
   display: flex;
@@ -104,7 +108,7 @@ export default function TabbedSection() {
                 <Tab>Profile</Tab>
                 <Tab>Language</Tab>
             </TabsList>
-            <TabPanel value={0}>My account page</TabPanel>
+        <TabPanel value={0}>My account page  </TabPanel>
             <TabPanel value={1}>Profile page</TabPanel>
             <TabPanel value={2}>Language page</TabPanel>
         </TabsUnstyled>
