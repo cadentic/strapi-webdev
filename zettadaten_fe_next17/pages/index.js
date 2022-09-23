@@ -12,6 +12,7 @@ import CopyerightZettadaten from '../components/CopyerightZettadaten.js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import HeroSection from "../components/HeroSection";
+import TimelineSection from "../components/TimelineSection";
 import TabbedSection from "../components/TabbedSection";
 import DropDownPaperSection from "../components/DropDownPaperSection";
 import Testimonial from "../components/Testimonial";
@@ -98,7 +99,8 @@ const Home = ({ Pages, images, FooterLink, error }) => {
         {/*    < DropDownPaperSection Pages={requestPages} error={error} /> */}
         <Testimonial Pages={Pages} requestMyImages={images} error={error} />
       </div>
-      <FooterComponent />
+      <TimelineSection />
+      <TabbedSection />
       <CopyerightZettadaten FooterLink={FooterLink} error={error} />
     </div>
   );
@@ -116,12 +118,12 @@ Home.getInitialProps = async ctx => {
     //    console.log(Pages);
     const images = res2.data;
     const res3 = await axios.get('http://localhost:1337/api/' + 'footerLinks')
-    const FooterLink = res2.data;
+    const FooterLink = res3.data;
 
     return { Pages, images, FooterLink };
     //  return { HomeAccordition };
   } catch (error) {
-    return { error };
+    throw ( error );
   }
   {/*
     let Pages =
