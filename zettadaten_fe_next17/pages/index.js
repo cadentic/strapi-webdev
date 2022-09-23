@@ -79,7 +79,7 @@ export async function getServerSideProps() {
 */
 
 
-const Home = ({ Pages, images, error }) => {
+const Home = ({ Pages, images, FooterLink, error }) => {
   // }
   // const [Pages, setPages] = useState()
   // setPages(await res.json())
@@ -99,7 +99,7 @@ const Home = ({ Pages, images, error }) => {
         <Testimonial Pages={Pages} requestMyImages={images} error={error} />
       </div>
       <FooterComponent />
-      <CopyerightZettadaten />
+      <CopyerightZettadaten FooterLink={FooterLink} error={error} />
     </div>
   );
 }
@@ -115,7 +115,10 @@ Home.getInitialProps = async ctx => {
     const res2 = await axios.get('http://localhost:1337/api/pages?populate=*')
     //    console.log(Pages);
     const images = res2.data;
-    return { Pages, images };
+    const res3 = await axios.get('http://localhost:1337/api/' + 'footerLinks')
+    const FooterLink = res2.data;
+
+    return { Pages, images, FooterLink };
     //  return { HomeAccordition };
   } catch (error) {
     return { error };
