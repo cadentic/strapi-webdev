@@ -7,6 +7,7 @@ import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import { Button} from '@mui/base';
 import { css } from '@emotion/react';
+import BrokenComponantTabbes from '../src/BrokenComponantTabbes'
 //import { StyledComponent } from '@mui/material/styles';
 
 
@@ -108,7 +109,7 @@ export default function TabbedSection() {
                 <Tab>Profile</Tab>
                 <Tab>Language</Tab>
             </TabsList>
-        <TabPanel value={0}>My account page  </TabPanel>
+        <TabPanel value={0}><BrokenComponantTabbes /> </TabPanel>
             <TabPanel value={1}>Profile page</TabPanel>
             <TabPanel value={2}>Language page</TabPanel>
         </TabsUnstyled>
