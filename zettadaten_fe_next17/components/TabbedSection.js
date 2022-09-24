@@ -110,8 +110,8 @@ export default function TabbedSection() {
                 <Tab>Language</Tab>
             </TabsList>
         <TabPanel value={0}> <BrokenComponantTabbes /> </TabPanel>
-            <TabPanel value={1}>Profile page</TabPanel>
-            <TabPanel value={2}>Language page</TabPanel>
+        <TabPanel value={1}><BrokenComponantTabbes /> </TabPanel>
+        <TabPanel value={2}><BrokenComponantTabbes /> </TabPanel>
         </TabsUnstyled>
     );
 }
