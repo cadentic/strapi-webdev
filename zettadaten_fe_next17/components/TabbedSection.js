@@ -109,7 +109,7 @@ export default function TabbedSection() {
                 <Tab>Profile</Tab>
                 <Tab>Language</Tab>
             </TabsList>
-        <TabPanel value={0}><BrokenComponantTabbes /> </TabPanel>
+        <TabPanel value={0}> <BrokenComponantTabbes /> </TabPanel>
             <TabPanel value={1}>Profile page</TabPanel>
             <TabPanel value={2}>Language page</TabPanel>
         </TabsUnstyled>
