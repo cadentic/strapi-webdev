@@ -17,13 +17,7 @@ const BrokenComponantTabbes = () => {
   return (
     <React.Fragment>
           <Grid container spacing={2}>
-              <Grid item xs={6}>
-                  <item><Container sx={{ height: '100%', width: '100%' }} maxWidth="sm">
-                      <CardMedia component="img" width='100%' sx={{ ml: '20em' }} image="/profile.png" alt="Paella dish" />
-
-
-                  </Container>
-                  </item> </Grid>
+             
               <Grid item xs sx={{display: 'flex' } }>
                   <item>
                       <Container sx={{ backgroundColor: '#fff', height: 'fit-content', width: 'fit-content', mt: '10rem', mb: '5rem', px: '5rem', opacity: '0.7' }} maxheight="sm" maxWidth="sm">
@@ -63,6 +57,15 @@ const BrokenComponantTabbes = () => {
                           </CardContent>
                       </Container>
                   </item>
+
+
+                  <Grid item xs={6}>
+                      <item><Container sx={{ height: '100%', width: '100%' }} maxWidth="sm">
+                          <CardMedia component="img" width='100%' sx={{ mr: '30em', px:'20' }} image="/profile.png" alt="Paella dish" />
+
+
+                      </Container>
+                      </item> </Grid>
               </Grid>
 
 
