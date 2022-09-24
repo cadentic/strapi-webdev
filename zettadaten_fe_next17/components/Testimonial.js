@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import style from "../styles/Home.module.css";
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
-import { Card, Paper, Button } from '@mui/Material';
+import { Card, Paper, Button, ImageList, ImageListItem } from '@mui/Material';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import { red } from '@mui/material/colors';
@@ -88,10 +88,19 @@ const Testimonial = ({ Pages, error, requestMyImages }) => {
                             title={Pages.attributes.Title}
                             subheader={Pages.attributes.createdAt}
                         />
-                        <CardMedia component="img" height="200" image="{$`requestMyImages.attributes.images.url`}" alt="Paella dish" />
-                        {/* 
+{/*                        <CardMedia component="img" height="200" image="{$`requestMyImages.attributes.images.url`}" alt="Paella dish" />
+                        
            <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
             */}
+
+                        <ImageListItem key={`$Pages.id`}>
+                            <img
+                                src={`${requestMyImages.attributes.images.url}?w=164&h=164&fit=crop&auto=format`}
+                                //srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                alt={Pages.attributes.Title}
+                                loading="lazy"
+                            />
+                        </ImageListItem>
                         <CardContent>
 
                             <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
