@@ -88,19 +88,11 @@ const Testimonial = ({ Pages, error, requestMyImages }) => {
                             title={Pages.attributes.Title}
                             subheader={Pages.attributes.createdAt}
                         />
-                        {/*                        <CardMedia component="img" height="200" image="{$`requestMyImages.attributes.images.url`}" alt="Paella dish" />
-                        
+                        <CardMedia component="img" height="200" image="{$`requestMyImages.Images.data.attributes.formats.medium.url`}" alt="Paella dish" />
+                        {/*         
            <Image width={600} height={350} className="h-48 w-full object-cover" src={urlBuilder(Pages.attribute.image.url)} alt={post.title} />
             */}
 
-                        <ImageListItem key={`$Pages.id`}>
-                            <img
-                                src={`http://localhost:1337${requestMyImages.Images.url}`}
-                                //srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                                alt={Pages.attributes.Title}
-                                loading="lazy"
-                            />
-                        </ImageListItem>
                         <CardContent>
 
                             <Typography variant="body2" color="text.secondary" className="hover:bg-violet-300">
