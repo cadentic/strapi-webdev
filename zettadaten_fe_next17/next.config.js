@@ -9,7 +9,7 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["localhost"],
+    domains: ["localhost:1337"],
   },
   i18n: {
     locales: ['en-US', 'fr', 'nl-NL', 'nl-BE'],
