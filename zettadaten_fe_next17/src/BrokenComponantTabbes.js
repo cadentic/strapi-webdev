@@ -24,10 +24,18 @@ const BrokenComponantTabbes = () => {
 
                   </Container>
                   </item> </Grid>
-              <Grid item xs>
+              <Grid item xs sx={{display: 'flex' } }>
                   <item>
                       <Container sx={{ backgroundColor: '#fff', height: 'fit-content', width: 'fit-content', mt: '10rem', mb: '5rem', px: '5rem', opacity: '0.7' }} maxheight="sm" maxWidth="sm">
-                          <CardContent sx={{ justifyContent: 'flex-end' }}> <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero volutpat. Ipsum dolor sit amet consectetur. Morbi tristique senectus et netus et malesuada. Mi bibendum neque egestas congue quisque egestas diam in. Eget egestas purus viverra accumsan in nisl nisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Ut aliquam purus sit amet. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Imperdiet sed euismod nisi porta lorem mollis. Tincidunt nunc pulvinar sapien et ligula. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Ornare massa eget egestas purus viverra accumsan in. Neque convallis a cras semper auctor neque. Elementum nisi quis eleifend quam adipiscing. Fringilla phasellus faucibus scelerisque eleifend donec.
+                          <CardContent sx={{
+                              justifyContent: 'flex-end', lineHeight: '24px',
+                              fontSize: '16px',
+                              letterSpacing: '0.18px',
+                              color: '#172B4D',
+                              margin: '16px 0px' }}> 
+                              <Typography variant="h6"> <Typography sx={{ textDecoration: 'underline', lineHeight: '24px' }} display="inline">
+                                  Some</Typography>  Title </Typography>
+                              <Typography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero volutpat. Ipsum dolor sit amet consectetur. Morbi tristique senectus et netus et malesuada. Mi bibendum neque egestas congue quisque egestas diam in. Eget egestas purus viverra accumsan in nisl nisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Ut aliquam purus sit amet. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Imperdiet sed euismod nisi porta lorem mollis. Tincidunt nunc pulvinar sapien et ligula. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Ornare massa eget egestas purus viverra accumsan in. Neque convallis a cras semper auctor neque. Elementum nisi quis eleifend quam adipiscing. Fringilla phasellus faucibus scelerisque eleifend donec.
 
                               Elit duis
 

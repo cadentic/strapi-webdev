@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroBrokenComponant from '../components/HeroBrokenComponant';
 
+
 //import Image from 'next/image';
 //import Paper from '@mui/material/Paper';
 //import Img from '';
@@ -10,6 +11,7 @@ const HeroSection = () => {
     return (
         <React.Fragment>
             <HeroBrokenComponant />
+            
         </React.Fragment>
     )
 }
