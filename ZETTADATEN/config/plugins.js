@@ -60,6 +60,14 @@ module.exports = ({ env }) => ({
     // ...
 });
 
+module.exports = ({ env }) => ({
+    //...
+    'import-export-entries': {
+        enabled: true,
+    },
+    //...
+});
+
 module.exports = {
     //
     graphql: {
@@ -75,3 +83,4 @@ module.exports = {
         },
     },
 };
+
