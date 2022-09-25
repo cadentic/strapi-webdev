@@ -2,10 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 //import Grid from '@mui/material/Grid'; // Grid version 1
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid2 from '@mui/material/Unstable_Grid2';
 import { styled, alpha } from '@mui/material/styles';
 //import Image from '@mui/material/Image';
-import { ClickAwayListener, Grow, Button, MenuList, ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar, Popper } from '@mui/material';
+import { Grid, ClickAwayListener, Grow, Button, MenuList, ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar, Popper } from '@mui/material';
 import MuiLink from '@mui/material/Link';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -48,7 +48,7 @@ const Navigations = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleClick = () => {
-    console.info(`You clicked ${ options[selectedIndex]}`);
+    console.info(`You clicked ${options[selectedIndex]}`);
   };
 
   const handleMenuItemClick = (event, index) => {
@@ -130,94 +130,122 @@ const Navigations = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-         </Menu>
+    </Menu>
   );
 
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Toolbar sx={{zIndex: 10}}>
-      <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' />
-        
-      </Toolbar>
-      <AppBar position="sticky" bgcolor="Colors.brown" maxWidth="sm" sx={{ top: 'auto', bottom: 2 , px: 'auto', color: '#3a3632' , fontcolor: '#faf8f7'}}>
-        <Toolbar>
-         
-          
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2, hover: "outline - 2" , pl: 2 }}
-          >
-            <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
-          </IconButton>
+      <Toolbar sx={{ zIndex: 10 }}>
+        <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' />
 
-          {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
+      </Toolbar>
+      <AppBar position="sticky" bgcolor="Colors.brown" maxWidth="sm" sx={{ display: 'flex', lineHeight: '10px', justifyContent: 'flex-end', top: 'auto', bottom: 7, px: 'auto', color: '#3a3632', fontcolor: '#faf8f7' }}>
+        <Toolbar>
+          <Grid container spacing={7} >
+
+            <Grid item xs sx={{ display: 'flex' }}>
+
+              <item>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ mr: 2, hover: "outline - 2", pl: 2 }}
+                >
+                  <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
+                </IconButton>
+              </item>
+            </Grid>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '5rem' }}>
+              <item> <Typography variant="h6" >Product</Typography></item>
+
+            </Grid>
+
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
+              <item> <Typography variant="h6" sx={{ color: '#F1EFED' }}>Service</Typography></item>
+            </Grid>
+
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-3em' }}>
+              <item> <Typography variant="h6" >Development</Typography></item>
+            </Grid>
+
+
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5em' }}>
+              <item> <Typography variant="h6" >Contact US</Typography></item>
+            </Grid>
+
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
+              <item> <Typography variant="h6" >About US</Typography></item>
+            </Grid>
+            {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
               <HomeIcon sx={{ color: '#faf8f7' }} /> Home
             </MuiLink>{' '} 
  
           </Typography>  */}
 
+            <Grid item xs sx={{ justifyContent: 'flex-end' }}>
 
+              <item>
+                <Box sx={{ flexGrow: 1 }} />
+                <Box position='left' sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
+                    <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, hover: "outline - 2" }}>{options[selectedIndex]}</Button>
+                    <Button
+                      size="small"
+                      aria-controls={open ? 'split-button-menu' : undefined}
+                      aria-expanded={open ? 'true' : undefined}
+                      aria-label="select merge strategy"
+                      aria-haspopup="menu"
+                      onClick={handleToggle}
+                    >
+                      <ArrowDropDownIcon sx={{ color: '#faf8f7', hover: "outline - 2" }} />
+                    </Button>
+                  </ButtonGroup>
+                  <Popper
+                    sx={{
+                      zIndex: 1, width: '20%', justifyContent: 'flex-end', hover: "outline - 2"
+                    }}
+                    open={open}
+                    anchorEl={anchorRef.current}
+                    role={undefined}
+                    transition
+                    disablePortal
+                  >
+                    {({ TransitionProps, placement }) => (
+                      <Grow sx={{ zIndex: '10' }}
+                        {...TransitionProps}
+                        style={{
+                          transformOrigin:
+                            placement === 'bottom' ? 'center top' : 'center bottom',
+                        }}
+                      >
+                        <Paper sx={{ height: '100%' }}>
+                          <ClickAwayListener onClickAway={handleClose}>
+                            <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
+                              {options.map((option, index) => (
+                                <MenuItem
+                                  key={option}
+                                  disabled={index === 2}
+                                  selected={index === selectedIndex}
+                                  onClick={(event) => handleMenuItemClick(event, index)}
+                                >
+                                  {option}
+                                </MenuItem>
+                              ))}
+                            </MenuList>
+                          </ClickAwayListener>
+                        </Paper>
+                      </Grow>
+                    )}
+                  </Popper>
 
-          <Box sx={{ flexGrow: 1 }} />
-          <Box position='left' sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
-              <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, hover: "outline - 2" }}>{options[selectedIndex]}</Button>
-              <Button
-                size="small"
-                aria-controls={open ? 'split-button-menu' : undefined}
-                aria-expanded={open ? 'true' : undefined}
-                aria-label="select merge strategy"
-                aria-haspopup="menu"
-                onClick={handleToggle}
-              >
-                <ArrowDropDownIcon sx={{ color: '#faf8f7', hover: "outline - 2" }} />
-              </Button>
-            </ButtonGroup>
-            <Popper
-              sx={{
-                zIndex: 1, width: '20%', justifyContent: 'flex-end', hover: "outline - 2"
-              }}
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              transition
-              disablePortal
-            >
-              {({ TransitionProps, placement }) => (
-                <Grow sx={{ zIndex: '10' }}
-                  {...TransitionProps}
-                  style={{
-                    transformOrigin:
-                      placement === 'bottom' ? 'center top' : 'center bottom',
-                  }}
-                >
-                  <Paper sx={{height:'100%'}}>
-                    <ClickAwayListener onClickAway={handleClose}>
-                      <MenuList id="split-button-menu" autoFocusItem sx={{ color: 'error' }}>
-                        {options.map((option, index) => (
-                          <MenuItem
-                            key={option}
-                            disabled={index === 2}
-                            selected={index === selectedIndex}
-                            onClick={(event) => handleMenuItemClick(event, index)}
-                          >
-                            {option}
-                          </MenuItem>
-                        ))}
-                      </MenuList>
-                    </ClickAwayListener>
-                  </Paper>
-                </Grow>
-              )}
-            </Popper>
-
-          </Box> 
+                </Box>
+              </item>           </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
 
