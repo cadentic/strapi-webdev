@@ -137,13 +137,13 @@ const Navigations = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Toolbar sx={{ zIndex: 10 }}>
+      <Toolbar sx={{ zIndex: 1 }}>
         <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' />
 
       </Toolbar>
-      <AppBar position="sticky" bgcolor="Colors.brown" maxWidth="sm" sx={{ display: 'flex', lineHeight: '10px', justifyContent: 'flex-end', top: 'auto', bottom: 7, px: 'auto', color: '#3a3632', fontcolor: '#faf8f7' }}>
+      <AppBar position="sticky" bgcolor="Colors.brown" maxWidth="sm" sx={{ verticalAlign: "middle",textAlign: 'center', display: 'flex', lineHeight: '10px', justifyContent: 'flex-end', top: 'auto', bottom: 7, px: 'auto', color: '#3a3632', fontcolor: '#faf8f7' }}>
         <Toolbar>
-          <Grid container spacing={7} >
+          <Grid container spacing={7} sx={{ textAlign: "center", verticalAlign: "middle"}}>
 
             <Grid item xs sx={{ display: 'flex' }}>
 
@@ -168,7 +168,7 @@ const Navigations = () => {
               <item> <Typography variant="h6" sx={{ color: '#F1EFED' }}>Service</Typography></item>
             </Grid>
 
-            <Grid item xs sx={{ color: '#F1EFED', ml: '-3em' }}>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
               <item> <Typography variant="h6" >Development</Typography></item>
             </Grid>
 
