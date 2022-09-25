@@ -20,7 +20,7 @@ const BrokenComponantTabbes = () => {
              
               <Grid item xs sx={{display: 'flex' } }>
                   <item>
-                      <Container sx={{ backgroundColor: '#fff', height: 'fit-content', width: 'fit-content', mt: '10rem', mb: '5rem', px: '5rem', opacity: '0.7' }} maxheight="sm" maxWidth="sm">
+                      <Container sx={{ backgroundColor: '#fff', alignContent: "space-between",height: 'fit-content', width: 'fit-content', mt: '10rem', mb: '5rem', px: '5rem', opacity: '0.7' }} maxheight="sm" maxWidth="sm">
                           <CardContent sx={{
                               justifyContent: 'flex-end', lineHeight: '24px',
                               fontSize: '16px',
