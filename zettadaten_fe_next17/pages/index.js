@@ -99,7 +99,7 @@ const Home = ({ Pages, images, FooterLink, error }) => {
         {/*    < DropDownPaperSection Pages={requestPages} error={error} /> */}
         <Testimonial Pages={Pages} requestMyImages={images} error={error} />
       </div>
-      <TimelineSection />
+      {/* <TimelineSection /> */}
       <TabbedSection />
       <CopyerightZettadaten FooterLink={FooterLink} error={error} />
     </div>
