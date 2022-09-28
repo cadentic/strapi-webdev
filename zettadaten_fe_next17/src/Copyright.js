@@ -12,6 +12,7 @@ export default function Copyright() {
             <MuiLink color="inherit" href="https://zettadaten.com/">
                 CADENTIC ZETTADATEN™
             </MuiLink>{' '}
+            <MuiLink href="/Tocs">Terms And Conditions</MuiLink>{' '}
             {new Date().getFullYear()}.
         </Typography>
     );
