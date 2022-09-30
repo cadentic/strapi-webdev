@@ -8,19 +8,19 @@ import axios from "axios";
 
 
 const tocs = ({ termsandservices }) => {
-  return <pre>{JSON.stringify(termsandservices, null, 4)}</pre>;
+//  return <pre>{JSON.stringify(termsandservices, null, 4)}</pre>;
 
   return (
     <React.Fragment>
       <head> <title>toc</title></head>
       <layout>
-        <Grid>
-          <Typography>
-            {termsandservices.attributes.termsandservice}
-          </Typography>
+        {termsandservices.data.map(termsandservices, index => (
+          <Grid>
+            {index === 0 ? <Typography>{termsandservices.attributes.termsandservice}</Typography> : 'null'} 
 
         </Grid>
-      </layout>
+        ))} </layout>
+
       {/* <CopyerightZettadaten FooterLink={FooterLink} error={error} /> */}
     </React.Fragment >
   )
