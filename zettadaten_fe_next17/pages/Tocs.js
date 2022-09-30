@@ -4,21 +4,23 @@ import { Slide, Popover, Grid, ClickAwayListener, Grow, Button, MenuList, Button
 import MuiLink from '@mui/material/Link';
 import Link from 'next/link';
 import axios from "axios";
+import ReactMarkdown from "react-markdown"
 
 
-
-const tocs = ({ termsandservices }) => {
-//  return <pre>{JSON.stringify(termsandservices, null, 4)}</pre>;
+const tocs = ({ termsandservices, error }) => {
+  //  return <pre>{JSON.stringify(termsandservices, null, 4)}</pre>;
 
   return (
     <React.Fragment>
-      <head> <title>toc</title></head>
+      <title>toc</title>
       <layout>
-        {termsandservices.data.map(termsandservices, index => (
+        <CssBaseline />
+        {termsandservices.data.map(termsandservices => (
           <Grid>
-            {index === 0 ? <Typography>{termsandservices.attributes.termsandservice}</Typography> : 'null'} 
+            <Typography variant="h6" sx={{ justifyContent: 'center', display: 'flex', fontSize: '3px', textAlign: 'middle', fontstyle: 'italic' }}>{termsandservices.attributes.title}</Typography>
+            <Typography variant="body2" spacing={2} sx={{ justifyContent: 'center', display: 'flex', fontSize: '1.5em' }}>{termsandservices.attributes.termsandservice}</Typography>
 
-        </Grid>
+          </Grid>
         ))} </layout>
 
       {/* <CopyerightZettadaten FooterLink={FooterLink} error={error} /> */}
@@ -42,48 +44,7 @@ tocs.getInitialProps = async ctx => {
   } catch (error) {
     throw (error);
   }
-  {/*
-    let Pages =
-      "'http://localhost:1337/api/' + 'pages'";
-   // let homeAaccorditions =
-   //   "'http://localhost:1337/api/' + 'home-accorditions'";
-   // let Menus =
-    //  "'http://localhost:1337/api/' + 'menus'";
 
-   // let HeroSections =
-   //   "'http://localhost:1337/api/' + 'hero-sections'";
-    let myimages = "'http://localhost:1337/api/pages?populate=*'";
-    const requestPages = axios.get(Pages);
-   // const requesthomeAaccorditions = axios.get(homeAaccorditions);
-  //  const requestMenus = axios.get(Menus);
-  //  const requestHeroSections = axios.get(HeroSections);
-    const requestMyImages = axios.get(myimages);
-    axios
-      .all([requestPages, requestMyImages ]) // requesthomeAaccorditions, requestMenus, requestHeroSections])
-      .then(
-        axios.spread((...responses) => {
-  //        const requestPages = responses[0];
-          //  const requesthomeAaccorditions = responses[1];
-          //  const requestMenus = responses[2];
-          //  const requestHeroSections = responses[3];
-          const requestMyImages = responses[2];
-
-          // use/access the results
-      
-          // console.log(requestPages, requesthomeAaccorditions, requestMenus, requestHeroSections);
-          return {
-            
-             // requestPages,
-              requestMyImages,
-            
-          }; //requesthomeAaccorditions, requestMenus, requestHeroSections };
-        })
-     
-      ) 
-  } catch (error) {
-    return { error };
-  }
-*/}
 };
 
 
