@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import { styled, alpha } from '@mui/material/styles';
 //import Image from '@mui/material/Image';
-import { Slide, Popover,Grid, ClickAwayListener, Grow, Button, MenuList, ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar, Popper } from '@mui/material';
+import { Slide, Popover, Grid, ClickAwayListener, Grow, Button, MenuList, ButtonGroup, Container, Toolbar, Typography, CssBaseline, Paper, Box, AppBar, Popper } from '@mui/material';
 import MuiLink from '@mui/material/Link';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -22,6 +22,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import * as Colors from '@mui/material/colors';
 import Image from 'next/image';
 import ViewCompactRoundedIcon from '@mui/icons-material/ViewCompactRounded';
+import BrokenComponantTabbes from '../src/BrokenComponantTabbes'
 
 
 // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -51,228 +52,229 @@ const Navigations = () => {
     setClicked((prev) => !prev);
   };
 
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-    const handleClick = () => {
-      console.info(`You clicked ${options[selectedIndex]}`);
-    };
+  const handleClick = () => {
+    console.info(`You clicked ${options[selectedIndex]}`);
+  };
 
-    const handleMenuItemClick = (event, index) => {
-      setSelectedIndex(index);
-      setOpen(false);
-    };
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setOpen(false);
+  };
 
-    const handleToggle = () => {
-      setOpen((prevOpen) => !prevOpen);
-    };
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
 
-    const handleClose = (event) => {
-      if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-      }
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
 
-      setOpen(false);
-    };
+    setOpen(false);
+  };
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-    const handleProfileMenuOpen = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-    const handleMobileMenuClose = () => {
-      setMobileMoreAnchorEl(null);
-    };
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
 
-    const handleMenuClose = () => {
-      setAnchorEl(null);
-      handleMobileMenuClose();
-    };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
 
-    const handleMobileMenuOpen = (event) => {
-      setMobileMoreAnchorEl(event.currentTarget);
-    };
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
 
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-      <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        id={menuId}
-        keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        open={isMenuOpen}
-        onClose={handleMenuClose}
-      >
-        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      </Menu>
-    );
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
 
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-      <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        id={mobileMenuId}
-        keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        open={isMobileMenuOpen}
-        onClose={handleMobileMenuClose}
-      >
-      </Menu>
-    );
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+    </Menu>
+  );
 
 
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        <Toolbar sx={{ zIndex: 1 }}>
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Toolbar sx={{ zIndex: 1 }}>
 
+        <Grid container spacing={7} sx={{ textAlign: "center", verticalAlign: "middle" }} >
+          <Grid item xs sx={{ display: 'flex' }}  >
+            <item> <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' /> </item>
+          </Grid>
+        </Grid>
+      </Toolbar>
+      <AppBar position="sticky" maxWidth="sm" sx={{ verticalAlign: "middle", textAlign: 'center', display: 'flex', lineHeight: '10px', justifyContent: 'flex-end', top: 'auto', bottom: 7, px: 'auto', color: '#3a3632', fontcolor: '#faf8f7' }}>
+        <Toolbar sx={{ display: 'flex' }} >
           <Grid container spacing={7} sx={{ textAlign: "center", verticalAlign: "middle" }} >
+
             <Grid item xs sx={{ display: 'flex' }}  >
-         <item> <Image src="/favicon.ico" alt="lol" width="260" height="50" padding='50 0 0' /> </item>
+
+              <item>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ mr: 2, hover: "outline - 2", pl: 2 }}
+                >
+                  <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
+                </IconButton>
+              </item>
             </Grid>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '5rem' }} ref={containerRef}>
+
+              <item onClick={handleChange} > <Typography variant="h6" >Product</Typography>
+
+              </item>
+
             </Grid>
-        </Toolbar>
-        <AppBar position="sticky" maxWidth="sm" sx={{ verticalAlign: "middle", textAlign: 'center', display: 'flex', lineHeight: '10px', justifyContent: 'flex-end', top: 'auto', bottom: 7, px: 'auto', color: '#3a3632', fontcolor: '#faf8f7' }}>
-          <Toolbar sx={{ display: 'flex'}} >
-            <Grid container spacing={7} sx={{ textAlign: "center", verticalAlign: "middle" }} >
 
-              <Grid item xs sx={{ display: 'flex' }}  >
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
+              <item> <Typography variant="h6" sx={{ color: '#F1EFED' }}>Service</Typography></item>
+            </Grid>
 
-                <item>
-                  <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ mr: 2, hover: "outline - 2", pl: 2 }}
-                  >
-                    <ViewCompactRoundedIcon sx={{ color: '#F1EFED' }} />
-                  </IconButton>
-                </item>
-              </Grid>
-              <Grid item xs sx={{ color: '#F1EFED', ml: '5rem' }} ref={containerRef}>
-                
-                <item onClick={handleChange} > <Typography variant="h6" >Product</Typography>
-
-                </item>
-              
-              </Grid>
-               
-              <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
-                <item> <Typography variant="h6" sx={{ color: '#F1EFED' }}>Service</Typography></item>
-              </Grid>
-
-              <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
-                <item> <Typography variant="h6" >Development</Typography></item>
-              </Grid>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
+              <item> <Typography variant="h6" >Development</Typography></item>
+            </Grid>
 
 
-              <Grid item xs sx={{ color: '#F1EFED', ml: '-5em' }}>
-                <item> <Typography variant="h6" >Contact US</Typography></item>
-              </Grid>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5em' }}>
+              <item> <Typography variant="h6" >Contact US</Typography></item>
+            </Grid>
 
-              <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
-                <item> <Typography variant="h6" >About US</Typography></item>
-              </Grid>
-              {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
+            <Grid item xs sx={{ color: '#F1EFED', ml: '-5rem' }}>
+              <item> <Typography variant="h6" >About US</Typography></item>
+            </Grid>
+            {/* <Typography variant="h6" gutterBottom component="div" sx={{ p: 2, pb: 0, top: 'auto', bottom: 2 }}>
             <MuiLink color="inherit" href="/">
               <HomeIcon sx={{ color: '#faf8f7' }} /> Home
             </MuiLink>{' '} 
  
           </Typography>  */}
 
-              <Grid item xs sx={{ justifyContent: 'flex-end' }}>
+            <Grid item xs sx={{ justifyContent: 'flex-end' }}>
 
-                <item>
-                  <Box sx={{ flexGrow: 1, backgroundColor: '#3a3632' }} />
-                  <Box position='left' sx={{ display: { xs: 'none', md: 'flex' } }}>
-                    <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
-                      <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, backgroundColor: '#3a3632'}}>{options[selectedIndex]}</Button>
-                      <Button
-                        size="small"
-                        aria-controls={open ? 'split-button-menu' : undefined}
-                        aria-expanded={open ? 'true' : undefined}
-                        aria-label="select merge strategy"
-                        aria-haspopup="menu"
-                        onClick={handleToggle}
-                      >
-                        <ArrowDropDownIcon sx={{ color: '#faf8f7'}} />
-                      </Button>
-                    </ButtonGroup>
-                    <Popper
-                      sx={{
-                        zIndex: 1, width: '20%', justifyContent: 'flex-end', aligntext: 'middle', backgroundColor: '#3a3632'
-                      }}
-                      open={open}
-                      anchorEl={anchorRef.current}
-                      role={undefined}
-                      transition
-                      disablePortal
+              <item>
+                <Box sx={{ flexGrow: 1, backgroundColor: '#3a3632' }} />
+                <Box position='left' sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button" >
+                    <Button onClick={handleClick} sx={{ color: '#faf8f7', border: 2, backgroundColor: '#3a3632' }}>{options[selectedIndex]}</Button>
+                    <Button
+                      size="small"
+                      aria-controls={open ? 'split-button-menu' : undefined}
+                      aria-expanded={open ? 'true' : undefined}
+                      aria-label="select merge strategy"
+                      aria-haspopup="menu"
+                      onClick={handleToggle}
                     >
-                      {({ TransitionProps, placement }) => (
-                        <Grow sx={{ zIndex: '10' }}
-                          {...TransitionProps}
-                          style={{
-                            transformOrigin:
-                              placement === 'bottom' ? 'center top' : 'center bottom',
-                          }}
-                        >
-                          <Paper sx={{ height: '100%', backgroundColor: '#3a3632', color: '#faf8f7' }}>
-                            <ClickAwayListener onClickAway={handleClose}>
-                              <MenuList id="split-button-menu" autoFocusItem sx={{ color: '#faf8f7', backgroundColor: '#3a3632', textColor: '#faf8f7' }}>
-                                {options.map((option, index) => (
-                                  <MenuItem
-                                    key={option}
-                                    disabled={index === 2}
-                                    selected={index === selectedIndex}
-                                    onClick={(event) => handleMenuItemClick(event, index)}
-                                  >
-                                    {option}
-                                  </MenuItem>
-                                ))}
-                              </MenuList>
-                            </ClickAwayListener>
-                          </Paper>
-                        </Grow>
-                      )}
-                    </Popper>
+                      <ArrowDropDownIcon sx={{ color: '#faf8f7' }} />
+                    </Button>
+                  </ButtonGroup>
+                  <Popper
+                    sx={{
+                      zIndex: 1, width: '20%', justifyContent: 'flex-end', aligntext: 'middle', backgroundColor: '#3a3632'
+                    }}
+                    open={open}
+                    anchorEl={anchorRef.current}
+                    role={undefined}
+                    transition
+                    disablePortal
+                  >
+                    {({ TransitionProps, placement }) => (
+                      <Grow sx={{ zIndex: '10' }}
+                        {...TransitionProps}
+                        style={{
+                          transformOrigin:
+                            placement === 'bottom' ? 'center top' : 'center bottom',
+                        }}
+                      >
+                        <Paper sx={{ height: '100%', backgroundColor: '#3a3632', color: '#faf8f7' }}>
+                          <ClickAwayListener onClickAway={handleClose}>
+                            <MenuList id="split-button-menu" autoFocusItem sx={{ color: '#faf8f7', backgroundColor: '#3a3632', textColor: '#faf8f7' }}>
+                              {options.map((option, index) => (
+                                <MenuItem
+                                  key={option}
+                                  disabled={index === 2}
+                                  selected={index === selectedIndex}
+                                  onClick={(event) => handleMenuItemClick(event, index)}
+                                >
+                                  {option}
+                                </MenuItem>
+                              ))}
+                            </MenuList>
+                          </ClickAwayListener>
+                        </Paper>
+                      </Grow>
+                    )}
+                  </Popper>
 
-                  </Box>
-                </item>           </Grid>
-            </Grid>
-          </Toolbar>
-        </AppBar>
-       {/*       <Grid sx={{ height: '100%', backgroundColor: '#3a3632', color: '#faf8f7', zIndex: 1 }}> <Slide direction="up" in={clicked} container={containerRef.current} mountOnEnter unmountOnExit>
-          <Typography> my item </Typography>
-        </Slide>
-        </Grid>
-                                */}
+                </Box>
+              </item>           </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+      <Grid sx={{ width: '100%' , height: '100%', backgroundColor: '#3a3632', color: '#faf8f7', zIndex: 1 }}> <Slide direction="down" in={clicked} container={containerRef.current} mountOnEnter unmountOnExit>
+        <Box> <BrokenComponantTabbes /> </Box>
+        
+      </Slide>
+      </Grid>
 
 
-      </React.Fragment>
-    );
-  }
+
+    </React.Fragment>
+  );
+}
 
 
 export default Navigations
